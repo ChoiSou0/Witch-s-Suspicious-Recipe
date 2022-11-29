@@ -641,7 +641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed964670b9185e54bb9fffb69c05a9d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   NearUi: {fileID: 337357935}
   isNearby: 0
 --- !u!50 &1734253600
