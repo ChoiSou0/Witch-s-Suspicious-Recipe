@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public enum NPCType
+public enum InteractionType
 {
-    None, Shop, CombinationTable, Item
+          
+}
+
+public interface Interaction_Info
+{
+
 }
 
 public class NPC : MonoBehaviour
 {
-    public NPCType type;
     public GameObject NearUi;
 
     // Start is called before the first frame update
