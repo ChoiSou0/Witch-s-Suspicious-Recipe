@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
     public float Player_Speed;
 
+    private NPC NowNPC;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,19 +30,6 @@ public class Player : MonoBehaviour
 
         transform.position = new Vector2(transform.position.x + X,
             transform.position.y + Y);
-    }
-                       
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.GetComponent<NPC>())
-        {
-            collision.GetComponent<NPC>().NearUi.SetActive(true);
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        
     }
 
     private void Interaction()
