@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     public float Player_Speed;
 
-    private NPC NowNPC;
+    private GameObject NowNPC;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     void Update()
     {
         Move();
+        Interaction();
+        Inventory();
     }
 
     private void Move()
@@ -34,6 +36,23 @@ public class Player : MonoBehaviour
 
     private void Interaction()
     {
-        
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            NowNPC.GetComponentInParent<NPC>().ActionKey();
+        }
+    }
+
+    private void Inventory()
+    {
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        NowNPC = collision.gameObject;
+        Debug.Log(NowNPC);
     }
 }

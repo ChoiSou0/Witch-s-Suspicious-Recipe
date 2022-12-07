@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public enum InteractionType
 {
-    NONE, SHOP
+    NONE, SHOP, CONVERSATION
 }
 
 public interface Interaction_Info
@@ -17,9 +17,13 @@ public interface Interaction_Info
 
 }
 
+
 public class NPC : MonoBehaviour, Interaction_Info
 {
-    public InteractionType Type { get; set; }
+    [field: SerializeField] 
+    public virtual InteractionType Type { get; set; }
+
+    [field: SerializeField]
     public bool enable { get; set; }
 
     public GameObject NearUi;
@@ -34,17 +38,10 @@ public class NPC : MonoBehaviour, Interaction_Info
     // Update is called once per frame
     protected virtual void Update()
     {
-        Debug.Log(enable);
-        ActionKey();
+        
     }
 
-    public void ActionKey()
-    {
-        if (enable)
-        {
-            
-        }
-    }
+    public virtual void ActionKey() { }
     
     private void OnTriggerStay2D(Collider2D collision)
     {
