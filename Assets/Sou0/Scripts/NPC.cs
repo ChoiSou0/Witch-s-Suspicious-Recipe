@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.Reflection;
+using UnityEditor;
 
 [System.Serializable]
 public enum InteractionType
@@ -26,7 +29,7 @@ public class NPC : MonoBehaviour, Interaction_Info
     [field: SerializeField]
     public bool enable { get; set; }
 
-    public GameObject NearUi;
+    [SerializeField] private GameObject NearUi;
 
 
     // Start is called before the first frame update

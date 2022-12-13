@@ -15,4 +15,13 @@ public class Slot : MonoBehaviour
     {
         
     }
+
+    private void ClickSlot()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+
+        }
+    }
+     
 }

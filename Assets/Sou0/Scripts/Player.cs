@@ -20,7 +20,6 @@ public class Player : MonoBehaviour
     {
         Move();
         Interaction();
-        Inventory();
     }
 
     private void Move()
@@ -40,14 +39,6 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             NowNPC.GetComponentInParent<NPC>().ActionKey();
-        }
-    }
-
-    private void Inventory()
-    {
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-
         }
     }
 
