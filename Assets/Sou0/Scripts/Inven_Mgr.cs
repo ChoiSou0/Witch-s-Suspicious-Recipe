@@ -18,14 +18,7 @@ public class Inven_Mgr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        NoSlotWarning();
         OpenCloseInven();
-    }
-
-    private void NoSlotWarning()
-    {
-        if (slot.Count == MaxSlot)
-            Debug.Log("인벤토리가 다 찼습니다");
     }
 
     public void OpenCloseInven()
@@ -35,7 +28,10 @@ public class Inven_Mgr : MonoBehaviour
             if (Inven.gameObject.activeSelf)
                 Inven.gameObject.SetActive(false);
             else if (!Inven.gameObject.activeSelf)
+            {
                 Inven.gameObject.SetActive(true);
+            }
         }
     }
+    
 }

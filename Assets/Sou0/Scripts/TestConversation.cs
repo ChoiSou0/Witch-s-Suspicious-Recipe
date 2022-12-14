@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestNPC : NPC
+public class TestConversation : NPC
 {
     // Start is called before the first frame update
     void Start()

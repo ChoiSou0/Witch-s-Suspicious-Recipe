@@ -8,7 +8,7 @@ using UnityEditor;
 [System.Serializable]
 public enum InteractionType
 {
-    NONE, SHOP, CONVERSATION
+    NONE, SHOP, Item ,CONVERSATION
 }
 
 public interface Interaction_Info
@@ -41,11 +41,41 @@ public class NPC : MonoBehaviour, Interaction_Info
     // Update is called once per frame
     protected virtual void Update()
     {
-        
+        Interaction();
     }
 
-    public virtual void ActionKey() { }
+    // 상호작용으로 나오는 행동의 가상함수
+    public virtual void ActionKey() 
+    {
     
+    }
+
+    // 상호작용 시작
+    private void Interaction()
+    {
+        if (Input.GetKeyDown(KeyCode.F) && enable)
+        {
+            Debug.Log("상호작용");
+            switch (Type)
+            {
+                case InteractionType.NONE:
+                    Debug.LogError("타입없음");
+                    break;
+                case InteractionType.SHOP:
+                    Debug.Log("상점오픈");
+                    break;
+                case InteractionType.Item:
+                    Debug.Log("아이템 획득");
+                    break;
+                case InteractionType.CONVERSATION:
+                    Debug.Log("제작대오픈");
+                    break;
+            }
+
+            ActionKey();
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))

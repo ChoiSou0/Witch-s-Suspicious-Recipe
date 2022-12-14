@@ -5,9 +5,16 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public float Player_Speed;
+    public float Speed;
+    private float MaxSpeed;
 
+    private Rigidbody2D rb2D;
     private GameObject NowNPC;
+
+    private void Awake()
+    {
+        rb2D = GetComponent<Rigidbody2D>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +26,6 @@ public class Player : MonoBehaviour
     void Update()
     {
         Move();
-        Interaction();
     }
 
     private void Move()
@@ -27,24 +33,11 @@ public class Player : MonoBehaviour
         float MoveX = Input.GetAxis("Horizontal");
         float MoveY = Input.GetAxis("Vertical");
 
-        float X = MoveX * Player_Speed * 0.01f;
-        float Y = MoveY * Player_Speed * 0.01f;
+        float X = MoveX * Speed;
+        float Y = MoveY * Speed;
 
-        transform.position = new Vector2(transform.position.x + X,
-            transform.position.y + Y);
+        Vector3 GetVel = new Vector3(X, Y, 0);
+        rb2D.velocity = GetVel;
     }
 
-    private void Interaction()
-    {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            NowNPC.GetComponentInParent<NPC>().ActionKey();
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        NowNPC = collision.gameObject;
-        Debug.Log(NowNPC);
-    }
 }

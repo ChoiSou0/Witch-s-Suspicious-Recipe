@@ -11,5 +11,6 @@ public class Item : ScriptableObject
 {
     public ItemType itemtype;
     [SerializeField] private string ItemName;
+    public int InvenMaxCount;
     [SerializeField] private Sprite ItemImage;
 }

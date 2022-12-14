@@ -1,27 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Slot : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Button thisBtn;
+    public int Count;
+    public int MaxCount;
+    public Item ItemInfo;
+
+    private void Awake()
+    {
+        thisBtn = this.GetComponent<Button>();
+        thisBtn.onClick.AddListener(ClickIcon);
+    }
+
+    private void FixedUpdate()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void ClickIcon()
     {
-        
+        Debug.Log(transform.localPosition);
     }
-
-    private void ClickSlot()
-    {
-        if (Input.GetKeyDown(KeyCode.Mouse1))
-        {
-
-        }
-    }
-     
 }
