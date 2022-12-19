@@ -53,6 +53,7 @@ public class NPC : MonoBehaviour, Interaction_Info
 
     // 상호작용 시작
     // 각각의 타입에 따라서 공통적으로 실행하는 부분을 실행시키고 각자의 행동으로 넘겨줌
+    // 현재 구현하지 않는 이유, 대화창 구현 후에 할예정
     private void Interaction()
     {
         if (Input.GetKeyDown(KeyCode.F) && enable)

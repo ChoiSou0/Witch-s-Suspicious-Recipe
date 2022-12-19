@@ -21,6 +21,7 @@ public class Inven_Mgr : MonoBehaviour
         OpenCloseInven();
     }
 
+    // 인벤토리가 열러 있고 닫혀 있음에 따라 다른 함수
     public void OpenCloseInven()
     {
         if (Input.GetKeyDown(KeyCode.B))
