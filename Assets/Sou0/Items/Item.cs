@@ -10,7 +10,7 @@ public enum ItemType
 public class Item : ScriptableObject
 {
     public ItemType itemtype;
-    [SerializeField] private string ItemName;
+    public string ItemName;
     public int InvenMaxCount;
-    [SerializeField] private Sprite ItemImage;
+    public Sprite ItemImage;
 }

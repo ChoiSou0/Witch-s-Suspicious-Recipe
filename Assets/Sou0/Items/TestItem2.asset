@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eab822059e87c4f4e91d7352125fc17b, type: 3}
-  m_Name: TestItem
+  m_Name: TestItem2
   m_EditorClassIdentifier: 
   itemtype: 1
-  ItemName: TestItem
-  InvenMaxCount: 10
+  ItemName: TestItem2
+  InvenMaxCount: 30
   ItemImage: {fileID: 0}

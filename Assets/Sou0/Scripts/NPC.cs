@@ -8,7 +8,7 @@ using UnityEditor;
 [System.Serializable]
 public enum InteractionType
 {
-    NONE, SHOP, Item ,CONVERSATION
+    NONE, SHOP, ITEM ,CONVERSATION, PLANT, STORAGESPACE
 }
 
 public interface Interaction_Info
@@ -45,12 +45,14 @@ public class NPC : MonoBehaviour, Interaction_Info
     }
 
     // 상호작용으로 나오는 행동의 가상함수
+    // 각각의 NPC에 스크립트에서 override로 재정의 하여 만듬
     public virtual void ActionKey() 
     {
     
     }
 
     // 상호작용 시작
+    // 각각의 타입에 따라서 공통적으로 실행하는 부분을 실행시키고 각자의 행동으로 넘겨줌
     private void Interaction()
     {
         if (Input.GetKeyDown(KeyCode.F) && enable)
@@ -64,11 +66,17 @@ public class NPC : MonoBehaviour, Interaction_Info
                 case InteractionType.SHOP:
                     Debug.Log("상점오픈");
                     break;
-                case InteractionType.Item:
+                case InteractionType.ITEM:
                     Debug.Log("아이템 획득");
                     break;
                 case InteractionType.CONVERSATION:
                     Debug.Log("제작대오픈");
+                    break;
+                case InteractionType.PLANT:
+                    Debug.Log("식물수집");
+                    break;
+                case InteractionType.STORAGESPACE:
+                    Debug.Log("수납공간 오픈");
                     break;
             }
 

@@ -28,13 +28,14 @@ public class Player : MonoBehaviour
         Move();
     }
 
+    // 움직임 함수
     private void Move()
     {
         float MoveX = Input.GetAxis("Horizontal");
         float MoveY = Input.GetAxis("Vertical");
 
-        float X = MoveX * Speed;
-        float Y = MoveY * Speed;
+        float X = MoveX * Speed * 2;
+        float Y = MoveY * Speed * 2;
 
         Vector3 GetVel = new Vector3(X, Y, 0);
         rb2D.velocity = GetVel;
