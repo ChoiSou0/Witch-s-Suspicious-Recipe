@@ -34,5 +34,22 @@ public class Inven_Mgr : MonoBehaviour
             }
         }
     }
+
+    public int FindSlot(Item NeedItem, int NeedCount)
+    {
+        int Finded;
+
+        for (int i = 0; i < slot.Count; i++)
+        {
+            if (NeedItem == slot[i].ItemInfo && NeedCount < slot[i].Count)
+            {
+                Finded = i;
+
+                return i;
+            }
+        }
+
+        return 0;
+    }
     
 }
