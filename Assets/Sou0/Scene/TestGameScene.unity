@@ -1509,6 +1509,7 @@ MonoBehaviour:
     NeedCount: 1
   - NeedItem: {fileID: 11400000, guid: 27f342d55c3ce7e48b5fe4be40ea73aa, type: 2}
     NeedCount: 1
+  ConversationItem: {fileID: 11400000, guid: 0cbb4c1426a8a5743bd33fa1ac19bff4, type: 2}
 --- !u!1 &597712163
 GameObject:
   m_ObjectHideFlags: 0

@@ -40,5 +40,12 @@ public class Slot : MonoBehaviour
             MaxCount = ItemInfo.InvenMaxCount;
             Name = ItemInfo.ItemName;
         }
+        
+        if (Count <= 0)
+        {
+            //ItemImage.sprite = null;
+            MaxCount = 0;
+            ItemInfo = null;
+        }
     }
 }
