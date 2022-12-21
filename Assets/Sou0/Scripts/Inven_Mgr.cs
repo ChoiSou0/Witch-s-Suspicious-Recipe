@@ -35,21 +35,18 @@ public class Inven_Mgr : MonoBehaviour
         }
     }
 
+    // 해당 아이템을 찾아서 인트형으로 반환해주는 함수
+    // 일단은 조합코드에 문제로 +1로 1이 더해져서 나오는 방식이라서
+    // 추후에 수정해야 될 수도 있음
     public int FindSlot(Item NeedItem, int NeedCount)
     {
-        int Finded;
-
         for (int i = 0; i < slot.Count; i++)
         {
-            if (NeedItem == slot[i].ItemInfo && NeedCount < slot[i].Count)
-            {
-                Finded = i;
-
+            if (NeedItem == slot[i].ItemInfo && NeedCount <= slot[i].Count)
                 return i;
-            }
         }
 
-        return 0;
+        return -1;
     }
     
 }
