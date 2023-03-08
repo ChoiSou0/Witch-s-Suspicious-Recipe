@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TestConversation : NPC
 {
+    [SerializeField] private Image Conversation_Pnl;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +21,7 @@ public class TestConversation : NPC
 
     public override void ActionKey()
     {
-                
+        Conversation_Pnl.gameObject.SetActive(true);
     }
     
 }

@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum ConversationType
+{
+    OVEN, KETTLE
+}
+
 [System.Serializable]
 public class Need
 {
@@ -14,6 +19,7 @@ public class Conversation : MonoBehaviour
 {
     [SerializeField] private List<Need> NeedItems = new List<Need>();
     [SerializeField] private Item ConversationItem;
+    [SerializeField] private ConversationType ConversationType;
     private Inven_Mgr inven_Mgr;
     private Button thisBtn;
 

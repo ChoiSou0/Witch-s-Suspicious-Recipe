@@ -58,6 +58,7 @@ public class NPC : MonoBehaviour, Interaction_Info
     {
         if (Input.GetKeyDown(KeyCode.F) && enable)
         {
+#if UNITY_EDITOR
             Debug.Log("상호작용");
             switch (Type)
             {
@@ -80,6 +81,7 @@ public class NPC : MonoBehaviour, Interaction_Info
                     Debug.Log("수납공간 오픈");
                     break;
             }
+#endif
 
             ActionKey();
         }
