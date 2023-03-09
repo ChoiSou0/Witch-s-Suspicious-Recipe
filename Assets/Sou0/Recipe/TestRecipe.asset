@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: TestRecipe
   m_EditorClassIdentifier: 
   table: 1
-  IngredientItemInfo: []
-  NeedIngredientItemCount: 
-  CombinationItemInfo: {fileID: 0}
-  AddCombinationItemCount: 0
+  IngredientItemInfo:
+  - {fileID: 11400000, guid: 1a921acfa0b7302409f19b097020a718, type: 2}
+  - {fileID: 11400000, guid: 27f342d55c3ce7e48b5fe4be40ea73aa, type: 2}
+  NeedIngredientItemCount: 0100000001000000
+  CombinationItemInfo: {fileID: 11400000, guid: 0cbb4c1426a8a5743bd33fa1ac19bff4, type: 2}
+  AddCombinationItemCount: 1
   Temperature: 0
-  FireCount: 0
+  FireCount: 1
   RowingType: 0
