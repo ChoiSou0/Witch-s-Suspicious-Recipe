@@ -9,6 +9,8 @@ public class PlaceManager : MonoBehaviour
     private Coroutine ObjectPlaceCoroutine;
     public GameObject Grid;
 
+    public int CrashCount;
+
     void Start()
     {
 
@@ -29,7 +31,10 @@ public class PlaceManager : MonoBehaviour
 
     public void Temp()
     {
-        ObjectPlaceCoroutine = StartCoroutine(PlaceObject(EventSystem.current.currentSelectedGameObject));
+        if (CrashCount == 0)
+        {
+            ObjectPlaceCoroutine = StartCoroutine(PlaceObject(EventSystem.current.currentSelectedGameObject));
+        }
     }
 
     IEnumerator PlaceObject(GameObject Obj)
@@ -39,9 +44,26 @@ public class PlaceManager : MonoBehaviour
             //Debug.Log(Input.mousePosition);
             //Obj.transform.position = Input.mousePosition;
             Obj.transform.position = new Vector2((int)Input.mousePosition.x / 192 * 192 + 96, (int)Input.mousePosition.y / 108 * 108 + 54);
+            Debug.Log(Obj.transform.position.y);
+            if (Obj.transform.position.x < 96)
+            {
+                Obj.transform.position = new Vector2(96, Obj.transform.position.y);
+            }
+            else if (Obj.transform.position.x > 1824)
+            {
+                Obj.transform.position = new Vector2(1824, Obj.transform.position.y);
+            }
+            if (Obj.transform.position.y < 54)
+            {
+                Obj.transform.position = new Vector2(Obj.transform.position.x, 54);
+            }
+            if (Obj.transform.position.y > 1026)
+            {
+                Obj.transform.position = new Vector2(Obj.transform.position.x, 1026);
+            }
             Obj.GetComponent<Button>().enabled = false;
             Grid.SetActive(true);
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && CrashCount == 0)
             {
                 Grid.SetActive(false);
                 Obj.GetComponent<Button>().enabled = true;
