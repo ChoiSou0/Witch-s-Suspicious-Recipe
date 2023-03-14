@@ -8,6 +8,7 @@ public class PlaceManager : MonoBehaviour
 {
     private Coroutine ObjectPlaceCoroutine;
     public GameObject Grid;
+    public GameObject DecoInventory;
 
     public int CrashCount;
 
@@ -18,23 +19,21 @@ public class PlaceManager : MonoBehaviour
 
     void Update()
     {
-        PlaceObjectTest();
+
     }
 
-    private void PlaceObjectTest()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            //ObjectPlaceCoroutine = StartCoroutine(PlaceObject());
-        }
-    }
-
-    public void Temp()
+    public void SelectThisObj()
     {
         if (CrashCount == 0)
         {
             ObjectPlaceCoroutine = StartCoroutine(PlaceObject(EventSystem.current.currentSelectedGameObject));
         }
+    }
+
+    public void ClickInInventory()
+    {
+        ObjectPlaceCoroutine = StartCoroutine(PlaceObject(Instantiate(EventSystem.current.currentSelectedGameObject.GetComponent<PlaceObj>().CopyObj, transform.position, Quaternion.identity, GameObject.Find("Canvas").transform)));
+        DecoInventory.SetActive(false);
     }
 
     IEnumerator PlaceObject(GameObject Obj)

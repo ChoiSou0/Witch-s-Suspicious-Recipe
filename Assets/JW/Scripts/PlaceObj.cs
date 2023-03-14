@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlaceObj : MonoBehaviour
 {
+    public GameObject CopyObj;
+
     void Start()
     {
 
