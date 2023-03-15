@@ -67,10 +67,6 @@ public class Conversation : MonoBehaviour
     [SerializeField] private List<Item> SelectionItem;
     [SerializeField] private List<Recipe> AllRecipe;
 
-    int Selection1;
-    int Selection2;
-    int Selection3;
-
     [SerializeField, Range(1, 5)] private int FireCount = 1;
     [SerializeField] private RowingType RowType = RowingType.TURNLEFT;
 
@@ -99,18 +95,13 @@ public class Conversation : MonoBehaviour
                         switch (SelectionItem.Count)
                         {
                             case 1:
-                                if (Selection1 != 0)
-                                {
-                                    inven_Mgr.slot[Selection1].Count -= AllRecipe[i].NeedIngredientItemCount[0];
-                                }
+                               
                                 break;
                             case 2:
-                                if (Selection1 != 0 && Selection2 != 0)
-                                {
-
-                                }
+                                
                                 break;
                             case 3:
+
                                 break;
                         }
                     }
@@ -121,20 +112,22 @@ public class Conversation : MonoBehaviour
         
     }
 
-    private int FindRecipe(int Find, int index)
+    private int FindRecipe(List<Item> Items)
     {
-        for (int i = 0; i < AllRecipe.Count; i++)
+        switch (SelectionItem.Count)
         {
-            for (int j = 0; j < AllRecipe[i].IngredientItemInfo.Count; j++)
-            {
-                if (AllRecipe[i].IngredientItemInfo[j] == SelectionItem[index])
-                {
-                    Find = inven_Mgr.FindSlot(SelectionItem[index], AllRecipe[i].NeedIngredientItemCount[index]);
-                    return i;
-                }
-            }
-        }
+            case 1:
 
+                break;
+            case 2:
+
+                break;
+            case 3:
+
+                break;
+        }
+       
+       
         return 0;
     }
 }
