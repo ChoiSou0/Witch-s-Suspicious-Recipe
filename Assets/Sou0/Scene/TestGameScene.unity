@@ -762,14 +762,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 1
-  ConversationBtn: {fileID: 2096086749}
+  Conversation_Pnl: {fileID: 334415653}
+  Inven_Pnl: {fileID: 1542444168}
   SelectionItem:
   - {fileID: 11400000, guid: 1a921acfa0b7302409f19b097020a718, type: 2}
   - {fileID: 11400000, guid: 27f342d55c3ce7e48b5fe4be40ea73aa, type: 2}
   AllRecipe:
   - {fileID: 11400000, guid: 708b702379bcf6d4fa8a41e4a93be016, type: 2}
   FireCount: 1
-  RowType: 0
+  RowType: 1
   Temperture: 0
 --- !u!1 &335507304
 GameObject:
@@ -1727,7 +1728,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 585806610}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 334415655}
+        m_TargetAssemblyTypeName: Conversation, Assembly-CSharp
+        m_MethodName: TurnLeftBtnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &585806610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4255,7 +4268,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1505311008}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 334415655}
+        m_TargetAssemblyTypeName: Conversation, Assembly-CSharp
+        m_MethodName: Fire5BtnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1505311008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4952,7 +4977,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1622375566}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 334415655}
+        m_TargetAssemblyTypeName: Conversation, Assembly-CSharp
+        m_MethodName: TurnRightBtnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1622375566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5524,7 +5561,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1746283134}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 334415655}
+        m_TargetAssemblyTypeName: Conversation, Assembly-CSharp
+        m_MethodName: Fire3BtnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1746283134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5886,7 +5935,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1804429071}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 334415655}
+        m_TargetAssemblyTypeName: Conversation, Assembly-CSharp
+        m_MethodName: Fire1BtnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1804429071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6469,7 +6530,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1989140325}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 334415655}
+        m_TargetAssemblyTypeName: Conversation, Assembly-CSharp
+        m_MethodName: Fire2BtnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1989140325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6841,7 +6914,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2039345776}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 334415655}
+        m_TargetAssemblyTypeName: Conversation, Assembly-CSharp
+        m_MethodName: Fire4BtnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2039345776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6963,7 +7048,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2039691905}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 334415655}
+        m_TargetAssemblyTypeName: Conversation, Assembly-CSharp
+        m_MethodName: TurnNoBtnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2039691905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7466,7 +7563,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2144017796}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 334415655}
+        m_TargetAssemblyTypeName: Conversation, Assembly-CSharp
+        m_MethodName: TurnZigzagBtnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2144017796
 MonoBehaviour:
   m_ObjectHideFlags: 0

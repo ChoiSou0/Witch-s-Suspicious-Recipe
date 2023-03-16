@@ -42,11 +42,23 @@ public class Inven_Mgr : MonoBehaviour
     {
         for (int i = 0; i < slot.Count; i++)
         {
-            if (NeedItem == slot[i].ItemInfo && NeedCount <= slot[i].Count)
+             if (NeedItem == slot[i].ItemInfo && NeedCount <= slot[i].Count)
                 return i;
         }
 
         return -1;
     }
     
+    // 빈 인벤을 찿아서 인자로 받아오는 아이템과 갯수를 넣어주는 함수
+    public void FindEmptySlot(Item AddItem, int Count)
+    {
+        for (int i = 0; i < slot.Count; i++)
+        {
+            if (slot[i].ItemInfo == null)
+            {
+                slot[i].ItemInfo = AddItem;
+                slot[i].Count = Count;
+            }
+        }
+    }
 }

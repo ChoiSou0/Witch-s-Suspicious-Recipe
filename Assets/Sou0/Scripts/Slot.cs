@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class Slot : MonoBehaviour
 {
     [SerializeField] private Image ItemImage;
+    private Image Conversation_Pnl;
+    private Conversation conversation;
     private Button thisBtn;
     private string Name;
     public int Count;
@@ -15,6 +17,8 @@ public class Slot : MonoBehaviour
     private void Awake()
     {
         thisBtn = this.GetComponent<Button>();
+        Conversation_Pnl = GameObject.FindObjectOfType<Image>();
+        conversation = GameObject.FindObjectOfType<Conversation>();
         thisBtn.onClick.AddListener(ClickIcon);
     }
 
@@ -28,6 +32,20 @@ public class Slot : MonoBehaviour
     private void ClickIcon()
     {
         Debug.Log(transform.localPosition);
+        if (Conversation_Pnl.gameObject.activeSelf)
+        {
+            switch (conversation.SelectionItem.Count)
+            {
+                case 0:
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+            }
+        }
     }
 
     // 인벤토리의 변화를 체크하여 변화시켜주는 함수    
