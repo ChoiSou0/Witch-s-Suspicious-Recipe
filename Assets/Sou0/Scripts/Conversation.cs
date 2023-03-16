@@ -11,6 +11,8 @@ public class ConversationEditor : Editor
     SerializedProperty Type;
     SerializedProperty Conversation_Pnl;
     SerializedProperty Inven_Pnl;
+    SerializedProperty SelectionImg;
+    SerializedProperty SelectionTxt;
     SerializedProperty AllRecipe;
     SerializedProperty SelectionItem;
 
@@ -24,6 +26,8 @@ public class ConversationEditor : Editor
         Type = serializedObject.FindProperty("Type");
         Conversation_Pnl = serializedObject.FindProperty("Conversation_Pnl");
         Inven_Pnl = serializedObject.FindProperty("Inven_Pnl");
+        SelectionImg = serializedObject.FindProperty("SelectionImg");
+        SelectionTxt = serializedObject.FindProperty("SelectionTxt");
         AllRecipe = serializedObject.FindProperty("AllRecipe");
         SelectionItem = serializedObject.FindProperty("SelectionItem");
 
@@ -38,6 +42,8 @@ public class ConversationEditor : Editor
         EditorGUILayout.PropertyField(Type);
         EditorGUILayout.PropertyField(Conversation_Pnl);
         EditorGUILayout.PropertyField(Inven_Pnl);
+        EditorGUILayout.PropertyField(SelectionImg);
+        EditorGUILayout.PropertyField(SelectionTxt);
         EditorGUILayout.PropertyField(AllRecipe);
         EditorGUILayout.PropertyField(SelectionItem);
 
@@ -68,6 +74,8 @@ public class Conversation : MonoBehaviour
     private Inven_Mgr inven_Mgr;
     [SerializeField] private Image Conversation_Pnl;
     [SerializeField] private Image Inven_Pnl;
+    public List<Image> SelectionImg;
+    public List<Text> SelectionTxt;
     public List<Item> SelectionItem;
     [SerializeField] private List<Recipe> AllRecipe;
 
@@ -110,6 +118,8 @@ public class Conversation : MonoBehaviour
                                         inven_Mgr.slot[sel1].Count -= AllRecipe[i].NeedIngredientItemCount[0];
 
                                         inven_Mgr.FindEmptySlot(AllRecipe[i].CombinationItemInfo, AllRecipe[i].AddCombinationItemCount);
+                                        ResetSeleciton();
+                                        inven_Mgr.InvenClean();
                                     }
                                 }
                                 break;
@@ -126,6 +136,8 @@ public class Conversation : MonoBehaviour
                                         inven_Mgr.slot[sel2].Count -= AllRecipe[i].NeedIngredientItemCount[1];
 
                                         inven_Mgr.FindEmptySlot(AllRecipe[i].CombinationItemInfo, AllRecipe[i].AddCombinationItemCount);
+                                        ResetSeleciton();
+                                        inven_Mgr.InvenClean();
                                     }
                                 }
                                 break;
@@ -145,6 +157,8 @@ public class Conversation : MonoBehaviour
                                         inven_Mgr.slot[sel3].Count -= AllRecipe[i].NeedIngredientItemCount[2];
 
                                         inven_Mgr.FindEmptySlot(AllRecipe[i].CombinationItemInfo, AllRecipe[i].AddCombinationItemCount);
+                                        ResetSeleciton();
+                                        inven_Mgr.InvenClean();
                                     }
                                 }
                                 break;
@@ -157,6 +171,18 @@ public class Conversation : MonoBehaviour
         
     }
 
+    private void ResetSeleciton()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            //SelectionImg[i].sprite = null;
+            SelectionTxt[i].text = "";
+        }
+        SelectionItem.Clear();
+    }
+
+    // 버튼 클릭관련 함수
+    #region
     public void Fire1BtnClick()
     {
         FireCount = 1;
@@ -207,4 +233,5 @@ public class Conversation : MonoBehaviour
         Conversation_Pnl.gameObject.SetActive(false);
         Inven_Pnl.gameObject.SetActive(true);
     }
+    #endregion // 버튼 관련함수
 }

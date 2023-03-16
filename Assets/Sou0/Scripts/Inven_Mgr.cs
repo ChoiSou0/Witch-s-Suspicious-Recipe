@@ -57,7 +57,35 @@ public class Inven_Mgr : MonoBehaviour
             if (slot[i].ItemInfo == null)
             {
                 slot[i].ItemInfo = AddItem;
+                slot[i].Name = AddItem.ItemName;
                 slot[i].Count = Count;
+                slot[i].MaxCount = AddItem.InvenMaxCount;
+                slot[i].ItemImage.sprite = AddItem.ItemImage;
+                break;
+            }
+        }
+    }
+
+    public void InvenClean()
+    {
+        for (int i = 0; i < slot.Count; i++)
+        {
+            if (slot[i].Count == 0)
+            {
+                if (slot[i].ItemInfo == null)
+                    break;
+
+                slot[i].ItemInfo = slot[i + 1].ItemInfo;
+                slot[i].MaxCount = slot[i + 1].MaxCount;
+                slot[i].Count = slot[i + 1].Count;
+                slot[i].Name = slot[i + 1].Name;
+                slot[i].ItemImage = slot[i + 1].ItemImage;
+                
+                slot[i + 1].MaxCount = 0;
+                slot[i + 1].Count = 0;
+                slot[i + 1].Name = null;
+                slot[i + 1].ItemImage = null;
+
             }
         }
     }
