@@ -5,27 +5,27 @@ using UnityEngine.UI;
 
 public class PlaceObj : MonoBehaviour
 {
-    public GameObject CopyObj;
+	public GameObject CopyObj;
 
-    void Start()
-    {
+	void Start()
+	{
 
-    }
+	}
 
-    void Update()
-    {
+	void Update()
+	{
 
-    }
+	}
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        GameObject.Find("PlaceManager").GetComponent<PlaceManager>().CrashCount++;
-        this.GetComponent<Image>().color = new Color(1, 0, 0, 100f / 255);
-    }
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		GameObject.Find("PlaceManager").GetComponent<PlaceManager>().CrashCount++;
+		this.GetComponent<Image>().color = new Color(1, 0, 0, 100f / 255);
+	}
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        GameObject.Find("PlaceManager").GetComponent<PlaceManager>().CrashCount--;
-        this.GetComponent<Image>().color = new Color(0, 0, 0);
-    }
+	private void OnTriggerExit2D(Collider2D collision)
+	{
+		GameObject.Find("PlaceManager").GetComponent<PlaceManager>().CrashCount--;
+		this.GetComponent<Image>().color = new Color(1, 1, 1);
+	}
 }
