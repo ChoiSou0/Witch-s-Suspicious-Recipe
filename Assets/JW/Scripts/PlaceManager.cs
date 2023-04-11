@@ -6,14 +6,14 @@ using UnityEngine.EventSystems;
 
 public class PlaceManager : MonoBehaviour
 {
-	private Coroutine ObjectPlaceCoroutine;
-	public GameObject Grid;
-	public GameObject DecoInventory;
+	private Coroutine objectPlaceCoroutine;
+	public GameObject grid;
+	public GameObject decoInventory;
 
-	public GameObject OriginalItem;
-	public GameObject InventoryList;
+	public GameObject originalItem;
+	public GameObject inventoryList;
 
-	public int CrashCount;
+	public int crashCount;
 
 	void Start()
 	{
@@ -42,23 +42,23 @@ public class PlaceManager : MonoBehaviour
 
 	private void CreateNewItem(string ObjectName, string ImageName)
 	{
-		GameObject Temp = Instantiate(OriginalItem, transform.position, Quaternion.identity, InventoryList.transform);
-		Temp.GetComponent<PlaceObj>().CopyObj = GameObject.Find(ObjectName);
+		GameObject Temp = Instantiate(originalItem, transform.position, Quaternion.identity, inventoryList.transform);
+		Temp.GetComponent<PlaceObj>().copyObj = GameObject.Find(ObjectName);
 		Temp.GetComponent<Image>().sprite = Resources.Load<Sprite>(ImageName);
 	}
 
 	public void SelectThisObj()
 	{
-		if (CrashCount == 0)
+		if (crashCount == 0)
 		{
-			ObjectPlaceCoroutine = StartCoroutine(PlaceObject(EventSystem.current.currentSelectedGameObject));
+			objectPlaceCoroutine = StartCoroutine(PlaceObject(EventSystem.current.currentSelectedGameObject));
 		}
 	}
 
 	public void ClickInInventory()
 	{
-		ObjectPlaceCoroutine = StartCoroutine(PlaceObject(Instantiate(EventSystem.current.currentSelectedGameObject.GetComponent<PlaceObj>().CopyObj, transform.position, Quaternion.identity, GameObject.Find("Canvas").transform)));
-		DecoInventory.SetActive(false);
+		objectPlaceCoroutine = StartCoroutine(PlaceObject(Instantiate(EventSystem.current.currentSelectedGameObject.GetComponent<PlaceObj>().copyObj, transform.position, Quaternion.identity, GameObject.Find("Canvas").transform)));
+		decoInventory.SetActive(false);
 	}
 
 	IEnumerator PlaceObject(GameObject Obj)
@@ -86,12 +86,12 @@ public class PlaceManager : MonoBehaviour
 				Obj.transform.position = new Vector2(Obj.transform.position.x, 1026);
 			}
 			Obj.GetComponent<Button>().enabled = false;
-			Grid.SetActive(true);
-			if (Input.GetMouseButtonDown(0) && CrashCount == 0)
+			grid.SetActive(true);
+			if (Input.GetMouseButtonDown(0) && crashCount == 0)
 			{
-				Grid.SetActive(false);
+				grid.SetActive(false);
 				Obj.GetComponent<Button>().enabled = true;
-				StopCoroutine(ObjectPlaceCoroutine);
+				StopCoroutine(objectPlaceCoroutine);
 			}
 			yield return new WaitForSeconds(Time.deltaTime);
 		}

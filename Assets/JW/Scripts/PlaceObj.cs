@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlaceObj : MonoBehaviour
 {
-	public GameObject CopyObj;
+	public GameObject copyObj;
 
 	void Start()
 	{
@@ -19,13 +19,13 @@ public class PlaceObj : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		GameObject.Find("PlaceManager").GetComponent<PlaceManager>().CrashCount++;
+		GameObject.Find("PlaceManager").GetComponent<PlaceManager>().crashCount++;
 		this.GetComponent<Image>().color = new Color(1, 0, 0, 100f / 255);
 	}
 
 	private void OnTriggerExit2D(Collider2D collision)
 	{
-		GameObject.Find("PlaceManager").GetComponent<PlaceManager>().CrashCount--;
+		GameObject.Find("PlaceManager").GetComponent<PlaceManager>().crashCount--;
 		this.GetComponent<Image>().color = new Color(1, 1, 1);
 	}
 }

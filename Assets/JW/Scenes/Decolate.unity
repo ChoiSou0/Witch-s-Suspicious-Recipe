@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c51278ecf21c324b86a0cbd78e53099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CopyObj: {fileID: 0}
+  copyObj: {fileID: 0}
 --- !u!1 &119921449
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,7 +514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c51278ecf21c324b86a0cbd78e53099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CopyObj: {fileID: 0}
+  copyObj: {fileID: 0}
 --- !u!1 &128025435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,7 +1054,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c51278ecf21c324b86a0cbd78e53099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CopyObj: {fileID: 0}
+  copyObj: {fileID: 0}
 --- !u!1 &459326873
 GameObject:
   m_ObjectHideFlags: 0
@@ -2238,7 +2238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c51278ecf21c324b86a0cbd78e53099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CopyObj: {fileID: 0}
+  copyObj: {fileID: 0}
 --- !u!1 &1138245506
 GameObject:
   m_ObjectHideFlags: 0
@@ -2669,10 +2669,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c52ef9c7869a5a499124b638b10d0bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Grid: {fileID: 479535851}
-  DecoInventory: {fileID: 1705746124}
-  OriginalItem: {fileID: 1531094305}
-  InventoryList: {fileID: 257412335}
+  grid: {fileID: 479535851}
+  decoInventory: {fileID: 1705746124}
+  originalItem: {fileID: 1531094305}
+  inventoryList: {fileID: 257412335}
   CrashCount: 0
 --- !u!1 &1496980184
 GameObject:
@@ -2896,7 +2896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c51278ecf21c324b86a0cbd78e53099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CopyObj: {fileID: 0}
+  copyObj: {fileID: 0}
 --- !u!1 &1563531521
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,19 +12,19 @@ public class QuestManager : MonoBehaviour
 {
 	public struct QuestOrig
 	{
-		public string QuestName;
-		public string QuestDiscription;
-		public float QuestGoal;
-		public float QuestCount;
-		public Sprite QuestImage;
+		public string questName;
+		public string questDiscription;
+		public float questGoal;
+		public float questCount;
+		public Sprite questImage;
 
-		public QuestOrig(string QuestName, string QuestDiscription, float QuestGoal, float QuestCount, Sprite QuestImage)
+		public QuestOrig(string questName, string questDiscription, float questGoal, float questCount, Sprite questImage)
 		{
-			this.QuestName = QuestName;
-			this.QuestDiscription = QuestDiscription;
-			this.QuestGoal = QuestGoal;
-			this.QuestCount = QuestCount;
-			this.QuestImage = QuestImage;
+			this.questName = questName;
+			this.questDiscription = questDiscription;
+			this.questGoal = questGoal;
+			this.questCount = questCount;
+			this.questImage = questImage;
 		}
 	}
 
@@ -36,7 +36,7 @@ public class QuestManager : MonoBehaviour
 	//public float QuestGoalGlobal;
 
 	public List<string> QuestItem;
-	public int[] QuestNum;
+	public int[] questNum;
 
 	void Start()
 	{
@@ -56,12 +56,12 @@ public class QuestManager : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.E))
 		{
 			//QuestCount++;
-			QuestList[QuestNum[0]] = new QuestOrig(QuestList[QuestNum[0]].QuestName, QuestList[QuestNum[0]].QuestDiscription, QuestList[QuestNum[0]].QuestGoal, QuestList[QuestNum[0]].QuestCount + 1, QuestList[QuestNum[0]].QuestImage);
-			QuestList[QuestNum[1]] = new QuestOrig(QuestList[QuestNum[1]].QuestName, QuestList[QuestNum[1]].QuestDiscription, QuestList[QuestNum[1]].QuestGoal, QuestList[QuestNum[1]].QuestCount + 1, QuestList[QuestNum[1]].QuestImage);
-			QuestList[QuestNum[2]] = new QuestOrig(QuestList[QuestNum[2]].QuestName, QuestList[QuestNum[2]].QuestDiscription, QuestList[QuestNum[2]].QuestGoal, QuestList[QuestNum[2]].QuestCount + 1, QuestList[QuestNum[2]].QuestImage);
-			QuestPannel[0].gameObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = QuestList[QuestNum[0]].QuestCount + " / " + QuestList[QuestNum[0]].QuestGoal;
-			QuestPannel[1].gameObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = QuestList[QuestNum[1]].QuestCount + " / " + QuestList[QuestNum[1]].QuestGoal;
-			QuestPannel[2].gameObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = QuestList[QuestNum[2]].QuestCount + " / " + QuestList[QuestNum[2]].QuestGoal;
+			QuestList[questNum[0]] = new QuestOrig(QuestList[questNum[0]].questName, QuestList[questNum[0]].questDiscription, QuestList[questNum[0]].questGoal, QuestList[questNum[0]].questCount + 1, QuestList[questNum[0]].questImage);
+			QuestList[questNum[1]] = new QuestOrig(QuestList[questNum[1]].questName, QuestList[questNum[1]].questDiscription, QuestList[questNum[1]].questGoal, QuestList[questNum[1]].questCount + 1, QuestList[questNum[1]].questImage);
+			QuestList[questNum[2]] = new QuestOrig(QuestList[questNum[2]].questName, QuestList[questNum[2]].questDiscription, QuestList[questNum[2]].questGoal, QuestList[questNum[2]].questCount + 1, QuestList[questNum[2]].questImage);
+			QuestPannel[0].gameObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = QuestList[questNum[0]].questCount + " / " + QuestList[questNum[0]].questGoal;
+			QuestPannel[1].gameObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = QuestList[questNum[1]].questCount + " / " + QuestList[questNum[1]].questGoal;
+			QuestPannel[2].gameObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = QuestList[questNum[2]].questCount + " / " + QuestList[questNum[2]].questGoal;
 			//if (QuestCount >= QuestGoalGlobal)
 			//{
 			//	Debug.Log("Clear");
@@ -81,38 +81,38 @@ public class QuestManager : MonoBehaviour
 
 	public void ResetQuest()
 	{
-		QuestNum = new int[] { -1, -1, -1 };
+		questNum = new int[] { -1, -1, -1 };
 		for (int i = 0; i < 3; i++)
 		{
 			int Index = Random.Range(0, QuestList.Count);
-			if (Array.IndexOf(QuestNum, Index) == -1)
+			if (Array.IndexOf(questNum, Index) == -1)
 			{
 				QuestOrig QuestData = QuestList[Index];
-				QuestPannel[i].gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = QuestData.QuestName;
+				QuestPannel[i].gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = QuestData.questName;
 				//QuestNameText.text = QuestData.QuestName;
-				QuestPannel[i].gameObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = QuestData.QuestDiscription + "을(를) " + QuestData.QuestGoal + "개 가져오기";
+				QuestPannel[i].gameObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = QuestData.questDiscription + "을(를) " + QuestData.questGoal + "개 가져오기";
 				//QuestDiscriptionText.text = QuestData.QuestDiscription + "을(를) " + QuestData.QuestGoal + "개 가져오기";
 				//QuestGoalGlobal = QuestData.QuestGoal;
 				//QuestCount = 0;
-				QuestPannel[i].gameObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = QuestData.QuestCount + " / " + QuestData.QuestGoal;
+				QuestPannel[i].gameObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = QuestData.questCount + " / " + QuestData.questGoal;
 				//QuestCountText.text = QuestCount + " / " + QuestGoalGlobal;
-				QuestNum[i] = Index;
+				questNum[i] = Index;
 				i++;
 			}
 			i--;
 		}
-		Debug.Log(QuestNum[0]);
-		Debug.Log(QuestNum[1]);
-		Debug.Log(QuestNum[2]);
+		Debug.Log(questNum[0]);
+		Debug.Log(questNum[1]);
+		Debug.Log(questNum[2]);
 	}
 
 	public void AddQuest(string QuestName, string QuestDiscription, float QuestGoal, Sprite QuestImage)
 	{
 		QuestOrig temp = new QuestOrig();
-		temp.QuestName = QuestName;
-		temp.QuestDiscription = QuestDiscription;
-		temp.QuestGoal = QuestGoal;
-		temp.QuestImage = QuestImage;
+		temp.questName = QuestName;
+		temp.questDiscription = QuestDiscription;
+		temp.questGoal = QuestGoal;
+		temp.questImage = QuestImage;
 		QuestList.Add(temp);
 	}
 }
