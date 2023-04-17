@@ -9,7 +9,7 @@ public class LineCreator : MonoBehaviour
 	public Vector3 pointA;
 	public Vector3 pointB;
 
-	private bool stoploop;
+	public bool stoploop;
 
 	private MagicTemp MG;
 
@@ -24,6 +24,11 @@ public class LineCreator : MonoBehaviour
 		if (stoploop == false)
 		{
 			pointB = Input.mousePosition;
+		}
+		if (MG.isComplete == true && stoploop == false)
+		{
+			stoploop = true;
+			pointB = MG.otherObj.transform.position;
 		}
 		if (MG.isEnterNode == true && stoploop == false)
 		{

@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 public class MagicTemp : MonoBehaviour
 {
 	[HideInInspector] public bool isEnterNode;
+	[HideInInspector] public bool isComplete;
 	private bool[] alreadyUsed = new bool[9];
+	public int[] ActiveNum = new int[9];
 	private int otherNum;
 	private bool isStart;
 	[HideInInspector] public Collider2D otherObj;
@@ -23,11 +28,38 @@ public class MagicTemp : MonoBehaviour
 
 	private void OnTriggerStay2D(Collider2D collision)
 	{
-		if (Input.GetMouseButton(0))
+		if (collision.tag == "Complete")
+		{
+			if (ActiveNum[1] != 0 && isComplete == false)
+			{
+				for (int i = 0; i < 9; i++)
+				{
+					if (ActiveNum[i] == 0)
+					{
+						ActiveNum[i] = 99;
+					}
+					alreadyUsed[i] = true;
+					GameObject.Find("Button (" + i + ")").GetComponent<Image>().color = new Color(0, 1, 0);
+				}
+				isComplete = true;
+				MagicComplete();
+			}
+		}
+		else if (Input.GetMouseButton(0))
 		{
 			if (isStart == false)
 			{
-				alreadyUsed[int.Parse(collision.name.Split("Button (")[1].Split(")")[0])] = true;
+				int Num = int.Parse(collision.name.Split("Button (")[1].Split(")")[0]);
+				alreadyUsed[Num] = true;
+				for (int i = 0; i < 9; i++)
+				{
+					if (ActiveNum[i] == 0)
+					{
+						ActiveNum[i] = Num + 1;
+						GameObject.Find("Button (" + Num + ")").GetComponent<Image>().color = new Color(0, 1, 0);
+						break;
+					}
+				}
 				LineCreator temp = Instantiate(Resources.Load("Prefeb/Line") as GameObject, transform.position, Quaternion.identity, GameObject.Find("Canvas").transform).GetComponent<LineCreator>();
 				temp.pointA = collision.transform.position;
 				isStart = true;
@@ -36,8 +68,47 @@ public class MagicTemp : MonoBehaviour
 			if (alreadyUsed[otherNum] == false)
 			{
 				alreadyUsed[otherNum] = true;
+				for (int i = 0; i < 9; i++)
+				{
+					if (ActiveNum[i] == 0)
+					{
+						ActiveNum[i] = otherNum + 1;
+						GameObject.Find("Button (" + otherNum + ")").GetComponent<Image>().color = new Color(0, 1, 0);
+						if (i == 8)
+						{
+							MagicComplete();
+						}
+						break;
+					}
+				}
 				otherObj = collision;
 				isEnterNode = true;
+			}
+		}
+	}
+
+	private void MagicComplete()
+	{
+		Debug.Log("Complete");
+
+		CheckShape(new int[] { 1, 2, 3, 6, 5, 4, 7, 8, 9 }, 9, "¤©");
+		CheckShape(new int[] { 5, 6, 3, 2, 1, 4, 7, 8, 9 }, 9, "e");
+		CheckShape(new int[] { 1, 4, 7, 8, 9, 6, 3 }, 7, "U");
+	}
+
+	private void CheckShape(int[] Shape, int ReachNum, string PrintText)
+	{
+		int Counter = 0;
+
+		for (int i = 0; i < ReachNum; i++)
+		{
+			if (ActiveNum[i] == Shape[i])
+			{
+				Counter++;
+			}
+			if (Counter == ReachNum)
+			{
+				Debug.Log(PrintText);
 			}
 		}
 	}
