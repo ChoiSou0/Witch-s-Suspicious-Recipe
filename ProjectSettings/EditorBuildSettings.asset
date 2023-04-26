@@ -8,4 +8,40 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/JW/Scenes/!Combine.unity
+    guid: 68a6f0c005dc2234089a59230edb9286
+  - enabled: 1
+    path: Assets/JW/Scenes/Decolate.unity
+    guid: 45298cacd11f84948bd6417d18f07913
+  - enabled: 1
+    path: Assets/JW/Scenes/Dialogue.unity
+    guid: 54e27e3f5ab840643813a55719b1689e
+  - enabled: 1
+    path: Assets/JW/Scenes/Dictionary.unity
+    guid: d5186e0de25b23e4a96e657fd8bd91ca
+  - enabled: 1
+    path: Assets/JW/Scenes/Magic.unity
+    guid: 52d0c0131af415848938defff1957e92
+  - enabled: 1
+    path: Assets/JW/Scenes/MapTest.unity
+    guid: 7a6c192584ffa654ebac01114d438f43
+  - enabled: 1
+    path: Assets/JW/Scenes/Prepare.unity
+    guid: 2e714faeea126504581f67e20cca620e
+  - enabled: 1
+    path: Assets/JW/Scenes/Quest.unity
+    guid: f54290a9bd44f384a82213897627b26b
+  - enabled: 1
+    path: Assets/Scenes/TitleScene.unity
+    guid: 0cdfd02f773105244aaf7cafeaf538dc
+  - enabled: 1
+    path: Assets/Scenes/YuriaShop(InSide).unity
+    guid: feb69506d34c38341a462a792e45dc79
+  - enabled: 1
+    path: Assets/Scenes/YuriaShop(OutSide).unity
+    guid: 6a9948d392ee7394ca3919cacf6ff4f3
+  - enabled: 1
+    path: Assets/Sou0/Scene/TestGameScene.unity
+    guid: b08df1acbcb9cde498ca3cb1bd0870cb
   m_configObjects: {}

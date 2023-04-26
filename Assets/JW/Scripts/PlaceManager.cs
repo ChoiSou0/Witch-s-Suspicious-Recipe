@@ -57,7 +57,7 @@ public class PlaceManager : MonoBehaviour
 
 	public void ClickInInventory()
 	{
-		objectPlaceCoroutine = StartCoroutine(PlaceObject(Instantiate(EventSystem.current.currentSelectedGameObject.GetComponent<PlaceObj>().copyObj, transform.position, Quaternion.identity, GameObject.Find("Canvas").transform)));
+		objectPlaceCoroutine = StartCoroutine(PlaceObject(Instantiate(EventSystem.current.currentSelectedGameObject.GetComponent<PlaceObj>().copyObj, transform.position, Quaternion.identity, GameObject.Find("DecorateCanvas").transform)));
 		decoInventory.SetActive(false);
 	}
 

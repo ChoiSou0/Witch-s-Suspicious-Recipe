@@ -5,25 +5,27 @@ using UnityEngine.UI;
 
 public class Kettle_NPC : NPC
 {
-    [SerializeField] private Image Conversation_Pnl;
-    [SerializeField] private Image Inven_Pnl;
-    
-    // Update is called once per frame
-    void Update()
-    {
-        base.Update();
-    }
+	[SerializeField] private Image Conversation_Pnl;
+	[SerializeField] private Image Inven_Pnl;
 
-    public override void ActionKey()
-    {
-        Conversation_Pnl.gameObject.SetActive(true);
-        Inven_Pnl.gameObject.SetActive(true);
-    }
+	// Update is called once per frame
+	void Update()
+	{
+		base.Update();
+	}
 
-    public void OnCancelBtn()
-    {
-        Conversation_Pnl.gameObject.SetActive(false);
-        Inven_Pnl.gameObject.SetActive(false);
-    }
-    
+	public override void ActionKey()
+	{
+		Conversation_Pnl.gameObject.SetActive(true);
+		GameObject.Find("InvCanvas").transform.GetChild(0).gameObject.SetActive(true);
+		//Inven_Pnl.gameObject.SetActive(true);
+	}
+
+	public void OnCancelBtn()
+	{
+		Conversation_Pnl.gameObject.SetActive(false);
+		GameObject.Find("InvCanvas").transform.GetChild(0).gameObject.SetActive(false);
+		//Inven_Pnl.gameObject.SetActive(false);
+	}
+
 }

@@ -17,6 +17,6 @@ public class YarnScript : MonoBehaviour
 	public void PlaySE()
 	{
 		Debug.Log("d");
-		soundManager.PlaySE(Resources.Load("Clip/MP_Pew Pew") as AudioClip);
+		soundManager.PlaySE(Resources.Load<AudioClip>("Clip/MP_Pew Pew"));
 	}
 }

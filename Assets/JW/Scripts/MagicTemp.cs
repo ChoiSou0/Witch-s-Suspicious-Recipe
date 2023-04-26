@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -60,7 +60,7 @@ public class MagicTemp : MonoBehaviour
 						break;
 					}
 				}
-				LineCreator temp = Instantiate(Resources.Load("Prefeb/Line") as GameObject, transform.position, Quaternion.identity, GameObject.Find("Canvas").transform).GetComponent<LineCreator>();
+				LineCreator temp = Instantiate(Resources.Load<GameObject>("Prefeb/Line"), transform.position, Quaternion.identity, GameObject.Find("MagicCanvas").transform).GetComponent<LineCreator>();
 				temp.pointA = collision.transform.position;
 				isStart = true;
 			}
@@ -89,11 +89,17 @@ public class MagicTemp : MonoBehaviour
 
 	private void MagicComplete()
 	{
-		Debug.Log("Complete");
-
-		CheckShape(new int[] { 1, 2, 3, 6, 5, 4, 7, 8, 9 }, 9, "��");
+		CheckShape(new int[] { 1, 2, 3, 6, 5, 4, 7, 8, 9 }, 9, "ㄹ");
 		CheckShape(new int[] { 5, 6, 3, 2, 1, 4, 7, 8, 9 }, 9, "e");
 		CheckShape(new int[] { 1, 4, 7, 8, 9, 6, 3 }, 7, "U");
+		CheckShape(new int[] { 3, 2, 1, 4, 7, 8, 9 }, 7, "ㄷ");
+		CheckShape(new int[] { 7, 4, 1, 5, 3, 6, 9 }, 7, "M");
+		CheckShape(new int[] { 7, 4, 1, 5, 9, 6, 3 }, 7, "N");
+		CheckShape(new int[] { 1, 2, 3, 5, 7, 8, 9 }, 7, "Z");
+		CheckShape(new int[] { 2, 4, 5, 6, 8 }, 5, "⚡");
+		CheckShape(new int[] { 1, 2, 3, 6, 9 }, 5, "ㄱ");
+		CheckShape(new int[] { 1, 4, 7, 8, 9 }, 5, "ㄴ");
+		CheckShape(new int[] { 3, 2, 4, 5, 6, 8, 7 }, 7, "S");
 	}
 
 	private void CheckShape(int[] Shape, int ReachNum, string PrintText)
