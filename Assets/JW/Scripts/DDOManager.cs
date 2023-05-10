@@ -13,9 +13,14 @@ public class DDOManager : MonoBehaviour
 	{
 		for (int i = 0; i < objectList.Length; i++)
 		{
+			//objectList[i].AddComponent<DDOObj>();
 			DontDestroyOnLoad(objectList[i]);
 		}
-		SceneManager.LoadScene(startScene.name);
+		if (startScene != null)
+		{
+			SceneManager.LoadScene(startScene.name);
+		}
+		Destroy(this.gameObject);
 	}
 
 	void Update()
