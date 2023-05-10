@@ -35,7 +35,7 @@ public class LineCreator : MonoBehaviour
 			MG.isEnterNode = false;
 			stoploop = true;
 			pointB = MG.otherObj.transform.position;
-			LineCreator temp = Instantiate(Resources.Load<GameObject>("Prefeb/Line"), transform.position, Quaternion.identity, GameObject.Find("MagicCanvas").transform).GetComponent<LineCreator>();
+			LineCreator temp = Instantiate(Resources.Load<GameObject>("Prefeb/Line"), transform.position, Quaternion.identity, GameObject.Find("Canvas").transform).GetComponent<LineCreator>();
 			temp.pointA = MG.otherObj.transform.position;
 		}
 		if (Input.GetMouseButton(0))

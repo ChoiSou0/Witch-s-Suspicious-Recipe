@@ -60,7 +60,7 @@ public class MagicTemp : MonoBehaviour
 						break;
 					}
 				}
-				LineCreator temp = Instantiate(Resources.Load<GameObject>("Prefeb/Line"), transform.position, Quaternion.identity, GameObject.Find("MagicCanvas").transform).GetComponent<LineCreator>();
+				LineCreator temp = Instantiate(Resources.Load<GameObject>("Prefeb/Line"), transform.position, Quaternion.identity, GameObject.Find("Canvas").transform).GetComponent<LineCreator>();
 				temp.pointA = collision.transform.position;
 				isStart = true;
 			}
