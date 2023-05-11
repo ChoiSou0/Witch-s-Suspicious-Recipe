@@ -74,9 +74,6 @@ public class Player : MonoBehaviour
 		Vector3 GetVel = new Vector3(X, Y, 0);
 		rb2D.velocity = GetVel;
 
-		Debug.Log(MoveX);
-		Debug.Log(MoveY);
-
 		if (MoveX == 0 && MoveY == 0)
 			AniType = Ani_Type.IDLE;
 		else if (MoveX == 0 && MoveY > 0)
