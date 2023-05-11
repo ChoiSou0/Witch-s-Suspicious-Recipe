@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/JW/Scenes/!Combine.unity
-    guid: 68a6f0c005dc2234089a59230edb9286
+    path: Assets/Scenes/LoadScene.unity
+    guid: 307831034e4ce3a4296e0aad7882325c
   - enabled: 1
     path: Assets/JW/Scenes/Decolate.unity
     guid: 45298cacd11f84948bd6417d18f07913
@@ -44,4 +44,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Sou0/Scene/TestGameScene.unity
     guid: b08df1acbcb9cde498ca3cb1bd0870cb
+  - enabled: 1
+    path: Assets/JW/Scenes/Animal.unity
+    guid: 6ad4621fa3b718a4d9edfb2f39fa77f0
+  - enabled: 1
+    path: Assets/JW/Scenes/Timer.unity
+    guid: ddbf64248edc8214d8424e8d83589fc7
   m_configObjects: {}

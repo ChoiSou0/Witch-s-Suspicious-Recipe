@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class TitleManager : MonoBehaviour
 {
+	private GameManager GM;
+
 	void Start()
 	{
-
+		GM = GameObject.Find("GameManager").GetComponent<GameManager>();
 	}
 
 	void Update()
@@ -17,7 +19,7 @@ public class TitleManager : MonoBehaviour
 
 	public void NewGame()
 	{
-		SceneManager.LoadScene("Prepare");
+		GM.Loading("Prepare");
 	}
 
 	public void ExitGame()
