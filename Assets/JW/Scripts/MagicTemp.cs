@@ -13,6 +13,7 @@ public class MagicTemp : MonoBehaviour
 	private bool[] alreadyUsed = new bool[9];
 	public int[] ActiveNum = new int[9];
 	private int otherNum;
+	private int prevNum;
 	private bool isStart;
 	[HideInInspector] public Collider2D otherObj;
 
@@ -63,6 +64,7 @@ public class MagicTemp : MonoBehaviour
 				LineCreator temp = Instantiate(Resources.Load<GameObject>("Prefeb/Line"), transform.position, Quaternion.identity, GameObject.Find("Canvas").transform).GetComponent<LineCreator>();
 				temp.pointA = collision.transform.position;
 				isStart = true;
+				prevNum = Num;
 			}
 			otherNum = int.Parse(collision.name.Split("Button (")[1].Split(")")[0]);
 			if (alreadyUsed[otherNum] == false)
@@ -74,6 +76,103 @@ public class MagicTemp : MonoBehaviour
 					{
 						ActiveNum[i] = otherNum + 1;
 						GameObject.Find("Button (" + otherNum + ")").GetComponent<Image>().color = new Color(0, 1, 0);
+						if (prevNum == 0 && otherNum == 2 && alreadyUsed[1] != true)
+						{
+							alreadyUsed[1] = true;
+							ActiveNum[i + 1] = 2;
+							GameObject.Find("Button (" + 1 + ")").GetComponent<Image>().color = new Color(0, 1, 0);
+						}
+						else if (prevNum == 0 && otherNum == 6 && alreadyUsed[3] != true)
+						{
+							alreadyUsed[3] = true;
+							ActiveNum[i + 1] = 4;
+							GameObject.Find("Button (" + 3 + ")").GetComponent<Image>().color = new Color(0, 1, 0);
+						}
+						else if (prevNum == 0 && otherNum == 8 && alreadyUsed[4] != true)
+						{
+							alreadyUsed[4] = true;
+							ActiveNum[i + 1] = 5;
+							GameObject.Find("Button (" + 4 + ")").GetComponent<Image>().color = new Color(0, 1, 0);
+						}
+						else if (prevNum == 1 && otherNum == 7 && alreadyUsed[4] != true)
+						{
+							alreadyUsed[4] = true;
+							ActiveNum[i + 1] = 5;
+							GameObject.Find("Button (" + 4 + ")").GetComponent<Image>().color = new Color(0, 1, 0);
+						}
+						else if (prevNum == 2 && otherNum == 0 && alreadyUsed[1] != true)
+						{
+							alreadyUsed[1] = true;
+							ActiveNum[i + 1] = 2;
+							GameObject.Find("Button (" + 1 + ")").GetComponent<Image>().color = new Color(0, 1, 0);
+						}
+						else if (prevNum == 2 && otherNum == 6 && alreadyUsed[4] != true)
+						{
+							alreadyUsed[4] = true;
+							ActiveNum[i + 1] = 5;
+							GameObject.Find("Button (" + 4 + ")").GetComponent<Image>().color = new Color(0, 1, 0);
+						}
+						else if (prevNum == 2 && otherNum == 8 && alreadyUsed[5] != true)
+						{
+							alreadyUsed[5] = true;
+							ActiveNum[i + 1] = 6;
+							GameObject.Find("Button (" + 5 + ")").GetComponent<Image>().color = new Color(0, 1, 0);
+						}
+						else if (prevNum == 3 && otherNum == 5 && alreadyUsed[4] != true)
+						{
+							alreadyUsed[4] = true;
+							ActiveNum[i + 1] = 5;
+							GameObject.Find("Button (" + 4 + ")").GetComponent<Image>().color = new Color(0, 1, 0);
+						}
+						else if (prevNum == 5 && otherNum == 3 && alreadyUsed[4] != true)
+						{
+							alreadyUsed[4] = true;
+							ActiveNum[i + 1] = 5;
+							GameObject.Find("Button (" + 4 + ")").GetComponent<Image>().color = new Color(0, 1, 0);
+						}
+						else if (prevNum == 6 && otherNum == 0 && alreadyUsed[3] != true)
+						{
+							alreadyUsed[3] = true;
+							ActiveNum[i + 1] = 4;
+							GameObject.Find("Button (" + 3 + ")").GetComponent<Image>().color = new Color(0, 1, 0);
+						}
+						else if (prevNum == 6 && otherNum == 2 && alreadyUsed[4] != true)
+						{
+							alreadyUsed[4] = true;
+							ActiveNum[i + 1] = 5;
+							GameObject.Find("Button (" + 4 + ")").GetComponent<Image>().color = new Color(0, 1, 0);
+						}
+						else if (prevNum == 6 && otherNum == 8 && alreadyUsed[7] != true)
+						{
+							alreadyUsed[7] = true;
+							ActiveNum[i + 1] = 8;
+							GameObject.Find("Button (" + 7 + ")").GetComponent<Image>().color = new Color(0, 1, 0);
+						}
+						else if (prevNum == 7 && otherNum == 1 && alreadyUsed[4] != true)
+						{
+							alreadyUsed[4] = true;
+							ActiveNum[i + 1] = 5;
+							GameObject.Find("Button (" + 4 + ")").GetComponent<Image>().color = new Color(0, 1, 0);
+						}
+						else if (prevNum == 8 && otherNum == 0 && alreadyUsed[4] != true)
+						{
+							alreadyUsed[4] = true;
+							ActiveNum[i + 1] = 5;
+							GameObject.Find("Button (" + 4 + ")").GetComponent<Image>().color = new Color(0, 1, 0);
+						}
+						else if (prevNum == 8 && otherNum == 2 && alreadyUsed[5] != true)
+						{
+							alreadyUsed[5] = true;
+							ActiveNum[i + 1] = 6;
+							GameObject.Find("Button (" + 5 + ")").GetComponent<Image>().color = new Color(0, 1, 0);
+						}
+						else if (prevNum == 8 && otherNum == 6 && alreadyUsed[7] != true)
+						{
+							alreadyUsed[7] = true;
+							ActiveNum[i + 1] = 8;
+							GameObject.Find("Button (" + 7 + ")").GetComponent<Image>().color = new Color(0, 1, 0);
+						}
+						prevNum = otherNum;
 						if (i == 8)
 						{
 							MagicComplete();
