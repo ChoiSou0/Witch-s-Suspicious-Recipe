@@ -10,11 +10,12 @@ public class MagicTemp : MonoBehaviour
 {
 	[HideInInspector] public bool isEnterNode;
 	[HideInInspector] public bool isComplete;
+	[HideInInspector] public bool isReset;
+	[HideInInspector] public bool isStart;
 	private bool[] alreadyUsed = new bool[9];
 	public int[] ActiveNum = new int[9];
 	private int otherNum;
 	private int prevNum;
-	private bool isStart;
 	[HideInInspector] public Collider2D otherObj;
 
 	void Start()
@@ -25,6 +26,21 @@ public class MagicTemp : MonoBehaviour
 	void Update()
 	{
 		transform.position = Input.mousePosition;
+	}
+
+	public void ResetMagic()
+	{
+		for (int i = 0; i < 9; i++)
+		{
+			ActiveNum[i] = 0;
+			alreadyUsed[i] = false;
+			GameObject.Find("Button (" + i + ")").GetComponent<Image>().color = new Color(1, 1, 1);
+		}
+		isComplete = false;
+		isReset = true;
+		isStart = false;
+		isEnterNode = false;
+		otherObj = null;
 	}
 
 	private void Through(int i, int num)
@@ -60,6 +76,7 @@ public class MagicTemp : MonoBehaviour
 				}
 				LineCreator temp = Instantiate(Resources.Load<GameObject>("Prefeb/Line"), transform.position, Quaternion.identity, GameObject.Find("MagicCanvas").transform).GetComponent<LineCreator>();
 				temp.pointA = collision.transform.position;
+				isReset = false;
 				isStart = true;
 				prevNum = Num;
 			}

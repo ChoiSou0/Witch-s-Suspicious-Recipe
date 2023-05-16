@@ -38,15 +38,24 @@ public class LineCreator : MonoBehaviour
 			LineCreator temp = Instantiate(Resources.Load<GameObject>("Prefeb/Line"), transform.position, Quaternion.identity, GameObject.Find("MagicCanvas").transform).GetComponent<LineCreator>();
 			temp.pointA = MG.otherObj.transform.position;
 		}
+		if (MG.isReset == true)
+		{
+			Destroy(gameObject);
+		}
 		if (Input.GetMouseButton(0))
 		{
-			Vector3 differenceVector = pointB - pointA;
-
-			imageRectTransform.sizeDelta = new Vector2(differenceVector.magnitude, lineWidth);
-			imageRectTransform.pivot = new Vector2(0, 0.5f);
-			imageRectTransform.position = pointA;
-			float angle = Mathf.Atan2(differenceVector.y, differenceVector.x) * Mathf.Rad2Deg;
-			imageRectTransform.rotation = Quaternion.Euler(0, 0, angle);
+			LineDraw();
 		}
+	}
+
+	private void LineDraw()
+	{
+		Vector3 differenceVector = pointB - pointA;
+
+		imageRectTransform.sizeDelta = new Vector2(differenceVector.magnitude, lineWidth);
+		imageRectTransform.pivot = new Vector2(0, 0.5f);
+		imageRectTransform.position = pointA;
+		float angle = Mathf.Atan2(differenceVector.y, differenceVector.x) * Mathf.Rad2Deg;
+		imageRectTransform.rotation = Quaternion.Euler(0, 0, angle);
 	}
 }
