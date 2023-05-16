@@ -33,7 +33,7 @@ public class SaveManager : MonoBehaviour
 		{
 			string FromJsonData = File.ReadAllText(filePath);
 			data = JsonUtility.FromJson<Data>(FromJsonData);
-			print("불러오기 완료");
+			Debug.Log("불러오기 완료");
 		}
 	}
 
@@ -44,6 +44,6 @@ public class SaveManager : MonoBehaviour
 
 		File.WriteAllText(filePath, ToJsonData);
 
-		print("저장 완료");
+		Debug.Log("저장하기 완료");
 	}
 }

@@ -11,51 +11,64 @@ public class Timer : MonoBehaviour
 	private int yestermonth;
 	private int yesterday;
 
+	DateTime OnlineTime;
+
 	void Start()
 	{
 		SaveManager.Instance.LoadGameData();
 		SaveManager.Instance.SaveGameData();
 		yestermonth = SaveManager.Instance.data.yestermonth;
 		yesterday = SaveManager.Instance.data.yesterday;
+		StartCoroutine(TimeCheck());
 	}
 
 	void Update()
 	{
-		txt.text = DateTime.Now.ToString();
-		if (Input.GetKeyDown(KeyCode.Q))
-		{
-			TimeRefresh();
-		}
+
 	}
 
 	IEnumerator TimeCheck()
 	{
-		UnityWebRequest request = new UnityWebRequest();
-		using (request = UnityWebRequest.Get("www.naver.com"))
+		while (true)
 		{
-			yield return request.SendWebRequest();
+			UnityWebRequest request = new UnityWebRequest();
+			using (request = UnityWebRequest.Get("www.naver.com"))
+			{
+				yield return request.SendWebRequest();
 
-			if (request.isNetworkError)
-			{
-				Debug.Log(request.error);
+				if (request.result == UnityWebRequest.Result.ConnectionError)
+				{
+					if (request.error == "Cannot connect to destination host")
+					{
+						Debug.Log("인터넷 연결이 끊어졌습니다");
+					}
+					else if (request.error == "Failed to receive data")
+					{
+						Debug.Log("데이터를 받아오지 못했습니다");
+					}
+					else
+					{
+						Debug.Log(request.error);
+					}
+				}
+				else
+				{
+					string date = request.GetResponseHeader("date");
+					OnlineTime = DateTime.Parse(date).ToLocalTime();
+					txt.text = OnlineTime.ToString();
+					TimeRefresh();
+				}
 			}
-			else
-			{
-				string date = request.GetResponseHeader("date");
-				Debug.Log("받아온 시간" + date);
-				DateTime dateTime = DateTime.Parse(date).ToLocalTime();
-				Debug.Log("한국시간으로변환" + dateTime);
-			}
+			yield return new WaitForSecondsRealtime(0.05f);
 		}
 	}
 
 	public void TimeRefresh()
 	{
-		StartCoroutine(TimeCheck());
-		if (DateTime.Now.Month > yestermonth || DateTime.Now.Day > yesterday)
+		if (OnlineTime.Month > yestermonth || OnlineTime.Day > yesterday)
 		{
-			yestermonth = DateTime.Now.Month;
-			yesterday = DateTime.Now.Day;
+			yestermonth = OnlineTime.Month;
+			yesterday = OnlineTime.Day;
 			SaveManager.Instance.data.yesterday = yesterday;
 			SaveManager.Instance.data.yestermonth = yestermonth;
 			SaveManager.Instance.SaveGameData();

@@ -13,23 +13,25 @@ public class Animal : MonoBehaviour
 	void Start()
 	{
 		moveOn = true;
-		startPos = transform.position;
+		startPos = transform.localPosition;
+		InvokeRepeating("ResetPos", 0f, 3f);
 	}
 
 	void Update()
 	{
 		Move();
-		if (Input.GetKeyDown(KeyCode.A))
-		{
-			endPos = new Vector2(Random.Range(-moveRange, moveRange), Random.Range(-moveRange, moveRange));
-		}
+	}
+
+	public void ResetPos()
+	{
+		endPos = new Vector2(Random.Range(-moveRange, moveRange), Random.Range(-moveRange, moveRange));
 	}
 
 	private void Move()
 	{
 		if (moveOn)
 		{
-			transform.position = Vector3.MoveTowards(transform.position, endPos, moveSpeed * Time.deltaTime);
+			transform.localPosition = Vector3.MoveTowards(transform.localPosition, endPos, moveSpeed * 10 * Time.deltaTime);
 		}
 	}
 
