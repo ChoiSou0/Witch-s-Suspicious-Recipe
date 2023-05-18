@@ -5,18 +5,20 @@ using UnityEngine;
 public class LineCreator : MonoBehaviour
 {
 	private RectTransform imageRectTransform;
+	private BoxCollider2D imageCollider;
 	public float lineWidth = 1.0f;
 	public Vector3 pointA;
 	public Vector3 pointB;
 
 	public bool stoploop;
 
-	private MagicTemp MG;
+	private Magic MG;
 
 	void Start()
 	{
 		imageRectTransform = GetComponent<RectTransform>();
-		MG = GameObject.Find("Checker").GetComponent<MagicTemp>();
+		imageCollider = GetComponent<BoxCollider2D>();
+		MG = GameObject.Find("Mouse").GetComponent<Magic>();
 	}
 
 	void Update()
@@ -24,19 +26,31 @@ public class LineCreator : MonoBehaviour
 		if (stoploop == false)
 		{
 			pointB = Input.mousePosition;
-		}
-		if (MG.isComplete == true && stoploop == false)
-		{
-			stoploop = true;
-			pointB = MG.otherObj.transform.position;
-		}
-		if (MG.isEnterNode == true && stoploop == false)
-		{
-			MG.isEnterNode = false;
-			stoploop = true;
-			pointB = MG.otherObj.transform.position;
-			LineCreator temp = Instantiate(Resources.Load<GameObject>("Prefeb/Line"), transform.position, Quaternion.identity, GameObject.Find("MagicCanvas").transform).GetComponent<LineCreator>();
-			temp.pointA = MG.otherObj.transform.position;
+			if (Input.GetMouseButtonUp(0))
+			{
+				try
+				{
+					pointB = MG.otherObj.transform.position;
+				}
+				catch
+				{
+					pointB = pointA;
+				}
+				LineDraw();
+			}
+			if (MG.isComplete == true)
+			{
+				stoploop = true;
+				pointB = MG.otherObj.transform.position;
+			}
+			if (MG.isEnterNode == true)
+			{
+				MG.isEnterNode = false;
+				stoploop = true;
+				pointB = MG.otherObj.transform.position;
+				LineCreator Insobj = Instantiate(Resources.Load<GameObject>("Prefeb/Line"), transform.position, Quaternion.identity, GameObject.Find("MagicCanvas").transform).GetComponent<LineCreator>();
+				Insobj.pointA = MG.otherObj.transform.position;
+			}
 		}
 		if (MG.isReset == true)
 		{
@@ -53,6 +67,8 @@ public class LineCreator : MonoBehaviour
 		Vector3 differenceVector = pointB - pointA;
 
 		imageRectTransform.sizeDelta = new Vector2(differenceVector.magnitude, lineWidth);
+		imageCollider.offset = new Vector2(differenceVector.magnitude / 2, 0);
+		imageCollider.size = new Vector2(differenceVector.magnitude, lineWidth);
 		imageRectTransform.pivot = new Vector2(0, 0.5f);
 		imageRectTransform.position = pointA;
 		float angle = Mathf.Atan2(differenceVector.y, differenceVector.x) * Mathf.Rad2Deg;
