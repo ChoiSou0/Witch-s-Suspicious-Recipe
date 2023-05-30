@@ -10,7 +10,7 @@ public class LineCreator : MonoBehaviour
 	public Vector3 pointA;
 	public Vector3 pointB;
 
-	public bool stoploop;
+	public bool stopLoop;
 
 	private Magic MG;
 
@@ -23,36 +23,36 @@ public class LineCreator : MonoBehaviour
 
 	void Update()
 	{
-		if (stoploop == false)
+		if (!stopLoop)
 		{
 			pointB = Input.mousePosition;
 			if (Input.GetMouseButtonUp(0))
 			{
-				try
+				if (MG.otherObj != null)
 				{
 					pointB = MG.otherObj.transform.position;
 				}
-				catch
+				else
 				{
 					pointB = pointA;
 				}
 				LineDraw();
 			}
-			if (MG.isComplete == true)
+			else if (MG.isComplete)
 			{
-				stoploop = true;
+				stopLoop = true;
 				pointB = MG.otherObj.transform.position;
 			}
-			if (MG.isEnterNode == true)
+			else if (MG.isEnterNode)
 			{
 				MG.isEnterNode = false;
-				stoploop = true;
+				stopLoop = true;
 				pointB = MG.otherObj.transform.position;
 				LineCreator Insobj = Instantiate(Resources.Load<GameObject>("Prefeb/Line"), transform.position, Quaternion.identity, GameObject.Find("MagicCanvas").transform).GetComponent<LineCreator>();
 				Insobj.pointA = MG.otherObj.transform.position;
 			}
 		}
-		if (MG.isReset == true)
+		if (MG.isReset)
 		{
 			Destroy(gameObject);
 		}

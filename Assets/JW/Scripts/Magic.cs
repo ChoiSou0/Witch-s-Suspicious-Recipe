@@ -19,11 +19,6 @@ public class Magic : MonoBehaviour
 	private int prevNum;
 	public Collider2D otherObj;
 
-	void Start()
-	{
-
-	}
-
 	void Update()
 	{
 		transform.position = Input.mousePosition;

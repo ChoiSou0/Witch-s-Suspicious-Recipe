@@ -1,44 +1,36 @@
-using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class CameraManager : MonoBehaviour
 {
+	private Transform parentTransform;
+	private Transform cameraTransform;
+
+	[SerializeField] private float rangeX;
+	[SerializeField] private float rangeY;
+
+	private Vector3 targetPosition;
+
+	void Awake()
+	{
+		parentTransform = transform.parent;
+		cameraTransform = transform;
+	}
+
 	void Start()
 	{
-
+		targetPosition = new Vector3(0, 0, -10);
 	}
 
 	void Update()
 	{
-		Debug.Log(transform.position);
-		Debug.Log(transform.localPosition);
-		if (gameObject.transform.parent.transform.position.x < -10)
-		{
-			transform.position = new Vector3(-10, transform.position.y, -10);
-		}
-		else if (gameObject.transform.parent.transform.position.x > 10)
-		{
-			transform.position = new Vector3(10, transform.position.y, -10);
-		}
-		else
-		{
-			transform.localPosition = new Vector3(0, transform.localPosition.y, -10);
-		}
+		float parentX = parentTransform.position.x;
+		float parentY = parentTransform.position.y;
 
-		if (gameObject.transform.parent.transform.position.y < -5)
-		{
-			transform.position = new Vector3(transform.position.x, -5, -10);
-		}
-		else if (gameObject.transform.parent.transform.position.y > 5)
-		{
-			transform.position = new Vector3(transform.position.x, 5, -10);
-		}
-		else
-		{
-			transform.localPosition = new Vector3(transform.localPosition.x, 0, -10);
-		}
+		targetPosition.x = Mathf.Clamp(parentX, -rangeX, rangeX);
+		targetPosition.y = Mathf.Clamp(parentY, -rangeY, rangeY);
+
+		cameraTransform.position = targetPosition;
 	}
 }

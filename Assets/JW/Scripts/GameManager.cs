@@ -5,27 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-	private string loadscene;
+    public void Loading(string ls)
+    {
+        StartCoroutine(LoadDelay(ls));
+    }
 
-	void Start()
-	{
-
-	}
-
-	void Update()
-	{
-
-	}
-
-	public void Loading(string ls)
-	{
-		SceneManager.LoadScene("LoadScene");
-		loadscene = ls;
-		Invoke("LoadDealy", 2f);
-	}
-
-	private void LoadDealy()
-	{
-		SceneManager.LoadScene(loadscene);
-	}
+    IEnumerator LoadDelay(string ls)
+    {
+        SceneManager.LoadScene("LoadScene");
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(ls);
+    }
 }

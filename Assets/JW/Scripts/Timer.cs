@@ -11,7 +11,7 @@ public class Timer : MonoBehaviour
 	private int yestermonth;
 	private int yesterday;
 
-	DateTime OnlineTime;
+	private DateTime onlineTime;
 
 	void Start()
 	{
@@ -22,17 +22,11 @@ public class Timer : MonoBehaviour
 		StartCoroutine(TimeCheck());
 	}
 
-	void Update()
-	{
-
-	}
-
 	IEnumerator TimeCheck()
 	{
 		while (true)
 		{
-			UnityWebRequest request = new UnityWebRequest();
-			using (request = UnityWebRequest.Get("www.naver.com"))
+			using (UnityWebRequest request = UnityWebRequest.Get("http://www.naver.com"))
 			{
 				yield return request.SendWebRequest();
 
@@ -54,8 +48,8 @@ public class Timer : MonoBehaviour
 				else
 				{
 					string date = request.GetResponseHeader("date");
-					OnlineTime = DateTime.Parse(date).ToLocalTime();
-					txt.text = OnlineTime.ToString();
+					onlineTime = DateTime.Parse(date).ToLocalTime();
+					txt.text = onlineTime.ToString();
 					TimeRefresh();
 				}
 			}
@@ -65,10 +59,10 @@ public class Timer : MonoBehaviour
 
 	public void TimeRefresh()
 	{
-		if (OnlineTime.Month > yestermonth || OnlineTime.Day > yesterday)
+		if (onlineTime.Month > yestermonth || onlineTime.Day > yesterday)
 		{
-			yestermonth = OnlineTime.Month;
-			yesterday = OnlineTime.Day;
+			yestermonth = onlineTime.Month;
+			yesterday = onlineTime.Day;
 			SaveManager.Instance.data.yesterday = yesterday;
 			SaveManager.Instance.data.yestermonth = yestermonth;
 			SaveManager.Instance.SaveGameData();

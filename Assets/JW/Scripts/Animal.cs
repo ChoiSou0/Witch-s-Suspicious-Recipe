@@ -10,11 +10,13 @@ public class Animal : MonoBehaviour
 	public float moveRange;
 	public float moveSpeed;
 
+	private Coroutine resetCoroutine;
+
 	void Start()
 	{
 		moveOn = true;
 		startPos = transform.localPosition;
-		InvokeRepeating("ResetPos", 0f, 3f);
+		resetCoroutine = StartCoroutine(ResetCoroutine());
 	}
 
 	void Update()
@@ -22,7 +24,16 @@ public class Animal : MonoBehaviour
 		Move();
 	}
 
-	public void ResetPos()
+	IEnumerator ResetCoroutine()
+	{
+		while (true)
+		{
+			ResetPos();
+			yield return new WaitForSeconds(3f);
+		}
+	}
+
+	private void ResetPos()
 	{
 		endPos = new Vector2(Random.Range(-moveRange, moveRange), Random.Range(-moveRange, moveRange));
 	}
@@ -31,7 +42,7 @@ public class Animal : MonoBehaviour
 	{
 		if (moveOn)
 		{
-			transform.localPosition = Vector3.MoveTowards(transform.localPosition, endPos, moveSpeed * 10 * Time.deltaTime);
+			transform.localPosition = Vector2.MoveTowards(transform.localPosition, endPos, moveSpeed * 10 * Time.deltaTime);
 		}
 	}
 

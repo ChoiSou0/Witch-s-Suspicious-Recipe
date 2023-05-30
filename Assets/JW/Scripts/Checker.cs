@@ -11,11 +11,6 @@ public class Checker : MonoBehaviour
 		MG = GameObject.Find("Mouse").GetComponent<Magic>();
 	}
 
-	void Update()
-	{
-
-	}
-
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.tag == "Line")

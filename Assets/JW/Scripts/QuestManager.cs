@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.ReorderableList;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -45,11 +44,6 @@ public class QuestManager : MonoBehaviour
 		ResetQuest();
 	}
 
-	void Update()
-	{
-
-	}
-
 	public void AddQuest()
 	{
 		AddQuest("Quest Test", questItem[Random.Range(0, questItem.Count)], Random.Range(0, 101), Resources.Load<Sprite>("Image"));
@@ -83,7 +77,7 @@ public class QuestManager : MonoBehaviour
 	public void ResetQuest()
 	{
 		questNum = new int[] { -1, -1, -1 };
-		for (int i = 0; i < 3; i++)
+		for (int i = 0; i < 3;)
 		{
 			int Index = Random.Range(0, questList.Count);
 			if (Array.IndexOf(questNum, Index) == -1)
@@ -101,7 +95,6 @@ public class QuestManager : MonoBehaviour
 				questNum[i] = Index;
 				i++;
 			}
-			i--;
 		}
 		Debug.Log("퀘스트 목록 초기화 완료");
 	}
@@ -114,6 +107,6 @@ public class QuestManager : MonoBehaviour
 		temp.questGoal = QuestGoal;
 		temp.questImage = QuestImage;
 		questList.Add(temp);
-		Debug.Log(QuestName + " / " + QuestDiscription + "을(를) " + QuestGoal + "개 가져오기 퀘스트 추가");
+		Debug.Log($"{QuestName} / {QuestDiscription}을(를) {QuestGoal}개 가져오기 퀘스트 추가");
 	}
 }

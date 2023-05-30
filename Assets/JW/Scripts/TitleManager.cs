@@ -12,11 +12,6 @@ public class TitleManager : MonoBehaviour
 		GM = GameObject.Find("GameManager").GetComponent<GameManager>();
 	}
 
-	void Update()
-	{
-
-	}
-
 	public void NewGame()
 	{
 		GM.Loading("Prepare");

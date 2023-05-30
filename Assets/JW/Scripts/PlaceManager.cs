@@ -15,11 +15,6 @@ public class PlaceManager : MonoBehaviour
 
 	public int crashCount;
 
-	void Start()
-	{
-
-	}
-
 	void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.Q))
@@ -93,7 +88,7 @@ public class PlaceManager : MonoBehaviour
 				Obj.GetComponent<Button>().enabled = true;
 				StopCoroutine(objectPlaceCoroutine);
 			}
-			yield return new WaitForSeconds(Time.deltaTime);
+			yield return null;
 		}
 	}
 }
