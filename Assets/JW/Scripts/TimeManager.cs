@@ -8,7 +8,8 @@ public class TimeManager : MonoBehaviour
 {
 	public Light2D globalLight;
 	public TextMeshProUGUI timeText;
-	private bool ttt;
+	public bool ttt;
+	public int loopnum = 0;
 
 	void Start()
 	{
@@ -22,10 +23,12 @@ public class TimeManager : MonoBehaviour
 
 	IEnumerator TimeLight()
 	{
-		int loopnum = 0;
+		//int loopnum = 0;
 		string hour;
 		string min;
 		string sec;
+		int day = 60 * 60 * 24;
+		int scale = 10;
 		while (true)
 		{
 			if (globalLight.intensity <= 0)
@@ -38,25 +41,22 @@ public class TimeManager : MonoBehaviour
 			}
 			if (ttt == false)
 			{
-				globalLight.intensity = globalLight.intensity + 0.001388888888888889f;
-				//1/720
-				loopnum++;
+				globalLight.intensity = globalLight.intensity + 1f / day * scale;
+				//1/86400
+				//loopnum++;
+				loopnum += scale;
 			}
 			else
 			{
-				globalLight.intensity = globalLight.intensity - 0.001388888888888889f;
-				//1/720
-				loopnum++;
+				globalLight.intensity = globalLight.intensity - 1f / day * scale;
+				//1/86400
+				//loopnum++;
+				loopnum += scale;
 			}
 
-			print(loopnum);
-			hour = (loopnum / 60).ToString();
-			min = (loopnum % 60).ToString();
-
-			if (int.Parse(hour) >= 24)
-			{
-				loopnum -= 1440;
-			}
+			hour = (loopnum / 3600).ToString();
+			min = (loopnum % 3600 / 60).ToString();
+			sec = (loopnum % 60).ToString();
 
 			if (int.Parse(hour) < 10)
 			{
@@ -66,9 +66,13 @@ public class TimeManager : MonoBehaviour
 			{
 				min = "0" + min;
 			}
+			if (int.Parse(sec) < 10)
+			{
+				sec = "0" + sec;
+			}
 
-			timeText.text = hour + ":" + min + ":00";
-			yield return new WaitForSeconds(0.001f);
+			timeText.text = hour + ":" + min + ":" + sec;
+			yield return new WaitForSeconds(0.0001f);
 		}
 	}
 }
