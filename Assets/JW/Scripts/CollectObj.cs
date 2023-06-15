@@ -11,8 +11,10 @@ public class CollectObj : MonoBehaviour
 	public string ObjectName;
 	private CollectManager CM;
 
-	int FirstMagic;
-	int SecondMagic;
+	public bool isActive;
+
+	private int FirstMagic;
+	private int SecondMagic;
 
 	void Start()
 	{
@@ -23,13 +25,10 @@ public class CollectObj : MonoBehaviour
 
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.E))
-		{
-			Collect();
-		}
+		
 	}
 
-	private void Collect()
+	public void Collect()
 	{
 		if (CM.MagicList[FirstMagic] == true)
 		{
@@ -56,7 +55,8 @@ public class CollectObj : MonoBehaviour
 	{
 		if (collision.gameObject.tag == "Player")
 		{
-			transform.GetChild(0).gameObject.SetActive(true);
+			//transform.GetChild(0).gameObject.SetActive(true);
+			isActive = true;
 		}
 	}
 
@@ -64,7 +64,8 @@ public class CollectObj : MonoBehaviour
 	{
 		if (collision.gameObject.tag == "Player")
 		{
-			transform.GetChild(0).gameObject.SetActive(false);
+			//transform.GetChild(0).gameObject.SetActive(false);
+			isActive = false;
 		}
 	}
 }
