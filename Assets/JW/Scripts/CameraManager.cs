@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TestTools;
 
 public class CameraManager : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class CameraManager : MonoBehaviour
 	void Start()
 	{
 		targetPosition = new Vector3(0, 0, -10);
+		parentTransform = GameObject.Find("Player").transform;
+		cameraTransform = parentTransform.GetChild(1).transform;
 	}
 
 	void Update()
@@ -33,4 +36,13 @@ public class CameraManager : MonoBehaviour
 
 		cameraTransform.position = targetPosition;
 	}
+
+#if UNITY_EDITOR
+	private void OnDrawGizmos()
+	{
+		GameObject targetobj = GameObject.Find("CameraRange");
+		UnityEditor.Handles.color = Color.green;
+		UnityEditor.Handles.DrawWireCube(transform.position, new Vector3(rangeX * 2, rangeY * 2, 0));
+	}
+#endif
 }
