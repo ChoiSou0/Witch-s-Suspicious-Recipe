@@ -2,18 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class test : MonoBehaviour
+public class CollectPlayer : MonoBehaviour
 {
 	GameObject closest;
 
-	void Start()
-	{
-
-	}
-
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.E))
+		if (Input.GetKeyDown(KeyCode.F))
 		{
 			try
 			{
@@ -43,7 +38,7 @@ public class test : MonoBehaviour
 
 	public GameObject FindClosestObject()
 	{
-		GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("Line");
+		GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("CollectableObj");
 		GameObject closestObject = null;
 		float closestDistance = Mathf.Infinity;
 		Vector3 currentPosition = transform.position;
