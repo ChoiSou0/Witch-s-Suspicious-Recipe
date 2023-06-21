@@ -8,7 +8,7 @@ public class TimeManager : MonoBehaviour
 {
 	public Light2D globalLight;
 	public TextMeshProUGUI timeText;
-	public bool ttt;
+	public bool morning;
 	public int loopnum = 0;
 
 	void Start()
@@ -33,13 +33,13 @@ public class TimeManager : MonoBehaviour
 		{
 			if (globalLight.intensity <= 0)
 			{
-				ttt = false;
+				morning = false;
 			}
 			if (globalLight.intensity >= 1)
 			{
-				ttt = true;
+				morning = true;
 			}
-			if (ttt == false)
+			if (morning == false)
 			{
 				globalLight.intensity = globalLight.intensity + 1f / day * scale;
 				//1/86400
