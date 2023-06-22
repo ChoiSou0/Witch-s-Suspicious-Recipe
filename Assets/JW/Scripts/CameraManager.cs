@@ -31,8 +31,8 @@ public class CameraManager : MonoBehaviour
 		float parentX = parentTransform.position.x;
 		float parentY = parentTransform.position.y;
 
-		targetPosition.x = Mathf.Clamp(parentX, -rangeX, rangeX);
-		targetPosition.y = Mathf.Clamp(parentY, -rangeY, rangeY);
+		targetPosition.x = Mathf.Clamp(parentX, -rangeX + transform.position.x, rangeX + transform.position.x);
+		targetPosition.y = Mathf.Clamp(parentY, -rangeY + transform.position.y, rangeY + transform.position.y);
 
 		cameraTransform.position = targetPosition;
 	}
