@@ -20,9 +20,9 @@ public class GameManager : MonoBehaviour
 	}
 	public void Warp(string scenename, float[] loc)
 	{
-		isWarp = true;
         warploc = loc;
-        SceneManager.LoadScene(scenename);
+		StartCoroutine(LoadDelay(scenename));
+		isWarp = true;
 	}
 
 	private void SceneLoaded(Scene scene, LoadSceneMode mode)
