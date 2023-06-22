@@ -21,8 +21,8 @@ public class GameManager : MonoBehaviour
 	public void Warp(string scenename, float[] loc)
 	{
 		isWarp = true;
-		SceneManager.LoadScene(scenename);
-		warploc = loc;
+        warploc = loc;
+        SceneManager.LoadScene(scenename);
 	}
 
 	private void SceneLoaded(Scene scene, LoadSceneMode mode)

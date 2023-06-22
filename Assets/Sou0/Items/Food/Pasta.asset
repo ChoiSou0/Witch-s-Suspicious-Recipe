@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Pasta
   m_EditorClassIdentifier: 
   itemtype: 0
-  ItemName: 
-  InvenMaxCount: 0
-  ItemImage: {fileID: 0}
+  ItemName: "\uC2A4\uD30C\uAC8C\uD2F0"
+  InvenMaxCount: 10
+  ItemImage: {fileID: 21300000, guid: 322f0fa5c95b05f4d8ce13463c27543d, type: 3}

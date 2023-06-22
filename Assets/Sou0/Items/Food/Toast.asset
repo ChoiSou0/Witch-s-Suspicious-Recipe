@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eab822059e87c4f4e91d7352125fc17b, type: 3}
   m_Name: Toast
   m_EditorClassIdentifier: 
-  itemtype: 0
-  ItemName: 
-  InvenMaxCount: 0
-  ItemImage: {fileID: 0}
+  itemtype: 2
+  ItemName: "\uD584\uCE58\uC988\uD1A0\uC2A4\uD2B8"
+  InvenMaxCount: 10
+  ItemImage: {fileID: 21300000, guid: f51821ca2f4230e4a9926d89871dc347, type: 3}

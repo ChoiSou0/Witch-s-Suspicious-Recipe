@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemtype: 0
   ItemName: "\uC0AC\uACFC\uCE74\uB77C\uBA5C"
-  InvenMaxCount: 0
-  ItemImage: {fileID: 0}
+  InvenMaxCount: 5
+  ItemImage: {fileID: 21300000, guid: cb09a4f7dd832174a842840aaa76c370, type: 3}
