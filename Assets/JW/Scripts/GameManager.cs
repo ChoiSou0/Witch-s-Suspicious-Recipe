@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private GameObject player;
 	private float[] warploc;
 	private bool isWarp;
-	public bool isPortalDisable;
+	public bool isWarped;
 
 	private void Start()
 	{
@@ -21,9 +21,10 @@ public class GameManager : MonoBehaviour
 	}
 	public void Warp(string scenename, float[] loc)
 	{
-        warploc = loc;
-		StartCoroutine(LoadDelay(scenename));
+		warploc = loc;
 		isWarp = true;
+		isWarped = true;
+		StartCoroutine(LoadDelay(scenename));
 	}
 
 	private void SceneLoaded(Scene scene, LoadSceneMode mode)

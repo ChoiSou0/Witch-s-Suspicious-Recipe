@@ -8,23 +8,31 @@ public class Portal : MonoBehaviour
 {
 	private GameManager GM;
 	public SceneAsset scene;
-	public bool isOnPortal;
 	public float[] warploc = new float[2];
+	private bool isonportal;
 
 	private void Start()
 	{
 		GM = GameObject.Find("GameManager").GetComponent<GameManager>();
 	}
 
+	private void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+		{
+			if (isonportal == false)
+			{
+				GM.isWarped = false;
+			}
+		}
+	}
+
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.tag == "Player")
 		{
-			if (isOnPortal == true)
-			{
-				GM.isPortalDisable = true;
-			}
-			if (GM.isPortalDisable == false)
+			isonportal = true;
+			if (GM.isWarped == false)
 			{
 				GM.Warp(scene.name, warploc);
 			}
@@ -35,7 +43,8 @@ public class Portal : MonoBehaviour
 	{
 		if (collision.tag == "Player")
 		{
-			GM.isPortalDisable = false;
+			isonportal = false;
+			GM.isWarped = false;
 		}
 	}
 }
