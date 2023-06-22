@@ -5921,6 +5921,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: {fileID: 102900000, guid: 6b9848c31b3f0ba4e85e1ba97d1ce75c, type: 3}
+  isOnPortal: 0
+  warploc:
+  - 0
+  - 0
 --- !u!61 &860519345
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6480,7 +6484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2045222354115287870, guid: 9bf8c44df33b9f246a446d21efa48dd2, type: 3}
       propertyPath: rangeY
-      value: 7.69
+      value: 4.06
       objectReference: {fileID: 0}
     - target: {fileID: 4638642666053814301, guid: 9bf8c44df33b9f246a446d21efa48dd2, type: 3}
       propertyPath: m_RootOrder
@@ -16274,6 +16278,10 @@ PrefabInstance:
     - target: {fileID: 4591729837133990156, guid: 9f825344d9e13df4b9000a908e457ad2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591729837133990159, guid: 9f825344d9e13df4b9000a908e457ad2, type: 3}
+      propertyPath: isOnPortal
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f825344d9e13df4b9000a908e457ad2, type: 3}

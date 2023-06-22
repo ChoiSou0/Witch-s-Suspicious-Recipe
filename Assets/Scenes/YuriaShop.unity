@@ -12834,11 +12834,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2045222354115287870, guid: 9bf8c44df33b9f246a446d21efa48dd2, type: 3}
       propertyPath: rangeX
-      value: 21.34
+      value: 17.2
       objectReference: {fileID: 0}
     - target: {fileID: 2045222354115287870, guid: 9bf8c44df33b9f246a446d21efa48dd2, type: 3}
       propertyPath: rangeY
-      value: 16.3
+      value: 12.48
       objectReference: {fileID: 0}
     - target: {fileID: 4638642666053814301, guid: 9bf8c44df33b9f246a446d21efa48dd2, type: 3}
       propertyPath: m_RootOrder
@@ -14027,11 +14027,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4591729837133990156, guid: 9f825344d9e13df4b9000a908e457ad2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.015
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4591729837133990156, guid: 9f825344d9e13df4b9000a908e457ad2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.36
+      value: 4.37
       objectReference: {fileID: 0}
     - target: {fileID: 4591729837133990156, guid: 9f825344d9e13df4b9000a908e457ad2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14071,7 +14071,7 @@ PrefabInstance:
       objectReference: {fileID: 102900000, guid: feb69506d34c38341a462a792e45dc79, type: 3}
     - target: {fileID: 4591729837133990159, guid: 9f825344d9e13df4b9000a908e457ad2, type: 3}
       propertyPath: warploc.Array.data[1]
-      value: 3.3
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f825344d9e13df4b9000a908e457ad2, type: 3}
@@ -24234,7 +24234,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: cff59ed005c4d864c87c23d49d3d5277, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -24246,19 +24246,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &1096036357
-BoxCollider:
+--- !u!61 &1096036357
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1096036354}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.15431798, y: 0.00050258636}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.91, y: 2.27}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5652292, y: 2.2497199, z: 0.2}
-  m_Center: {x: 0.17238665, y: 0.010140515, z: 0}
+  m_Size: {x: 2.429045, y: 2.2689948}
+  m_EdgeRadius: 0
 --- !u!1001 &1098124492
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31020,8 +31033,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 102900000, guid: f29ad2f47673a5b4aa400a373cc85059, type: 3}
     - target: {fileID: 4591729837133990159, guid: 9f825344d9e13df4b9000a908e457ad2, type: 3}
+      propertyPath: isOnPortal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591729837133990159, guid: 9f825344d9e13df4b9000a908e457ad2, type: 3}
       propertyPath: warploc.Array.data[1]
-      value: -4
+      value: 5.679148
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f825344d9e13df4b9000a908e457ad2, type: 3}
