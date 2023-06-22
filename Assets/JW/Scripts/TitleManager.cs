@@ -14,7 +14,7 @@ public class TitleManager : MonoBehaviour
 
 	public void NewGame()
 	{
-		GM.Loading("Prepare");
+		GM.Loading("YuriaShop(InSide)");
 	}
 
 	public void ExitGame()
