@@ -8,6 +8,7 @@ public class Portal : MonoBehaviour
 {
 	private GameManager GM;
 	public SceneAsset scene;
+	public bool isOnPortal;
 	public float[] warploc = new float[2];
 
 	private void Start()
@@ -19,7 +20,22 @@ public class Portal : MonoBehaviour
 	{
 		if (collision.tag == "Player")
 		{
-			GM.Warp(scene.name, warploc);
+			if (isOnPortal == true)
+			{
+				GM.isPortalDisable = true;
+			}
+			if (GM.isPortalDisable == false)
+			{
+				GM.Warp(scene.name, warploc);
+			}
+		}
+	}
+
+	private void OnTriggerExit2D(Collider2D collision)
+	{
+		if (collision.tag == "Player")
+		{
+			GM.isPortalDisable = false;
 		}
 	}
 }

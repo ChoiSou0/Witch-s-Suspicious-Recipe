@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private GameObject player;
 	private float[] warploc;
 	private bool isWarp;
+	public bool isPortalDisable;
 
 	private void Start()
 	{
