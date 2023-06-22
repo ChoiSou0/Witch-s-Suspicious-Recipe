@@ -1052,8 +1052,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 102900000, guid: 7a6c192584ffa654ebac01114d438f43, type: 3}
   warploc:
-  - 100
-  - 100
+  - 10
+  - 10
 --- !u!212 &394514124
 SpriteRenderer:
   m_ObjectHideFlags: 0
