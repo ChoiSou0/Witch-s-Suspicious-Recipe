@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MapTest.unity
     guid: 7a6c192584ffa654ebac01114d438f43
   - enabled: 1
-    path: Assets/Scenes/Prepare.unity
+    path: Assets/Prepare.unity
     guid: 2e714faeea126504581f67e20cca620e
   - enabled: 1
     path: Assets/JW/Scenes/Quest.unity
