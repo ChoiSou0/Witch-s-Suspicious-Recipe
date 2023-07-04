@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public enum Ani_Type
 {
 	IDLE, UP, DOWN, LEFT, RIGHT, RIGHTUP,
-	RIGHTDOWN, LEFTUP, LEFTDOWN,
+	RIGHTDOWN, LEFTUP, LEFTDOWN, PICKUP
 }
 
 public class Player : MonoBehaviour
@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
 	[SerializeField] private Ani_Type AniType;
 	public float Speed;
 	private float MaxSpeed;
+	public bool DontMove;
 
 	private Rigidbody2D rb2D;
 	private Animator animator;
@@ -35,8 +36,9 @@ public class Player : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		Move();
-		Animation();
+		if (!DontMove)
+            Move();
+        Animation();
 	}
 
 	private void Animation()
@@ -59,6 +61,8 @@ public class Player : MonoBehaviour
 				break;
 			case Ani_Type.LEFTDOWN:
 				break;
+			case Ani_Type.PICKUP:
+				break;
 		}
 	}
 
@@ -71,26 +75,28 @@ public class Player : MonoBehaviour
 		float X = MoveX * Speed * 2;
 		float Y = MoveY * Speed * 2;
 
-		Vector3 GetVel = new Vector3(X, Y, 0);
+        if (MoveX == 0 && MoveY == 0)
+            AniType = Ani_Type.IDLE;
+        else if (MoveX == 0 && MoveY > 0)
+            AniType = Ani_Type.UP;
+        else if (MoveX == 0 && MoveY < 0)
+            AniType = Ani_Type.DOWN;
+        else if (MoveX > 0 && MoveY == 0)
+            AniType = Ani_Type.RIGHT;
+        else if (MoveX < 0 && MoveY == 0)
+            AniType = Ani_Type.LEFT;
+        else if (MoveX > 0 && MoveY > 0)
+            AniType = Ani_Type.RIGHTUP;
+        else if (MoveX > 0 && MoveY < 0)
+            AniType = Ani_Type.RIGHTDOWN;
+        else if (MoveX < 0 && MoveY > 0)
+            AniType = Ani_Type.LEFTUP;
+        else if (MoveX < 0 && MoveY < 0)
+            AniType = Ani_Type.LEFTDOWN;
+
+        Vector3 GetVel = new Vector3(X, Y, 0);
 		rb2D.velocity = GetVel;
 
-		if (MoveX == 0 && MoveY == 0)
-			AniType = Ani_Type.IDLE;
-		else if (MoveX == 0 && MoveY > 0)
-			AniType = Ani_Type.UP;
-		else if (MoveX == 0 && MoveY < 0)
-			AniType = Ani_Type.DOWN;
-		else if (MoveX > 0 && MoveY == 0)
-			AniType = Ani_Type.RIGHT;
-		else if (MoveX < 0 && MoveY == 0)
-			AniType = Ani_Type.LEFT;
-		else if (MoveX > 0 && MoveY > 0)
-			AniType = Ani_Type.RIGHTUP;
-		else if (MoveX > 0 && MoveY < 0)
-			AniType = Ani_Type.RIGHTDOWN;
-		else if (MoveX < 0 && MoveY > 0)
-			AniType = Ani_Type.LEFTUP;
-		else if (MoveX < 0 && MoveY < 0)
-			AniType = Ani_Type.LEFTDOWN;
+		
 	}
 }
