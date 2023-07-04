@@ -6,11 +6,14 @@ public class Animal : MonoBehaviour
 {
 	public bool moveOn;
 	private Vector2 startPos;
-	private Vector2 endPos;
+	private Vector3 endPos;
 	public float moveRange;
 	public float moveSpeed;
+	private bool isreset;
 
 	private Coroutine resetCoroutine;
+
+	public Animator animalAnim;
 
 	void Start()
 	{
@@ -26,11 +29,9 @@ public class Animal : MonoBehaviour
 
 	IEnumerator ResetCoroutine()
 	{
-		while (true)
-		{
-			ResetPos();
-			yield return new WaitForSeconds(3f);
-		}
+		yield return new WaitForSeconds(Random.Range(2f, 5f));
+		ResetPos();
+		isreset = true;
 	}
 
 	private void ResetPos()
@@ -42,7 +43,20 @@ public class Animal : MonoBehaviour
 	{
 		if (moveOn)
 		{
-			transform.localPosition = Vector2.MoveTowards(transform.localPosition, endPos, moveSpeed * 10 * Time.deltaTime);
+			if (transform.localPosition == endPos)
+			{
+				if (isreset == true)
+				{
+					isreset = false;
+					StartCoroutine(ResetCoroutine());
+				}
+				animalAnim.SetInteger("state", 0);
+			}
+			else
+			{
+				animalAnim.SetInteger("state", 1);
+			}
+			transform.localPosition = Vector2.MoveTowards(transform.localPosition, endPos, moveSpeed * Time.deltaTime);
 		}
 	}
 
