@@ -10,6 +10,8 @@ public class Animal : MonoBehaviour
 	public float moveRange;
 	public float moveSpeed;
 	private bool isreset;
+	public float minDelay = 2f;
+	public float maxDelay = 5f;
 
 	private Coroutine resetCoroutine;
 
@@ -29,7 +31,7 @@ public class Animal : MonoBehaviour
 
 	IEnumerator ResetCoroutine()
 	{
-		yield return new WaitForSeconds(Random.Range(2f, 5f));
+		yield return new WaitForSeconds(Random.Range(minDelay, maxDelay));
 		ResetPos();
 		isreset = true;
 	}

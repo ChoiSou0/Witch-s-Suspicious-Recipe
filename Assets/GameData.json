@@ -1,4 +1,6 @@
 {
-    "yestermonth": 6,
-    "yesterday": 8
+    "yestermonth": 0,
+    "yesterday": 0,
+    "slot": [],
+    "MaxSlot": 0
 }

@@ -16,7 +16,6 @@ public class Timer : MonoBehaviour
 	void Start()
 	{
 		SaveManager.Instance.LoadGameData();
-		SaveManager.Instance.SaveGameData();
 		yestermonth = SaveManager.Instance.data.yestermonth;
 		yesterday = SaveManager.Instance.data.yesterday;
 		StartCoroutine(TimeCheck());

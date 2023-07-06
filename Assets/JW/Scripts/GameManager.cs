@@ -12,12 +12,13 @@ public class GameManager : MonoBehaviour
 
 	private void Start()
 	{
-		SceneManager.sceneLoaded += SceneLoaded;
+		//SceneManager.sceneLoaded += SceneLoaded;
+		SceneManager.LoadScene("TitleScene");
 	}
 
-	public void Loading(string ls)
+	public void Loading(string scenename)
 	{
-		StartCoroutine(LoadDelay(ls));
+		StartCoroutine(LoadDelay(scenename));
 	}
 	public void Warp(string scenename, float[] loc)
 	{
@@ -27,19 +28,21 @@ public class GameManager : MonoBehaviour
 		StartCoroutine(LoadDelay(scenename));
 	}
 
-	private void SceneLoaded(Scene scene, LoadSceneMode mode)
+	/*private void SceneLoaded(Scene scene, LoadSceneMode mode)
 	{
 		if (isWarp == true)
 		{
 			isWarp = false;
 			player.transform.localPosition = new Vector2(warploc[0], warploc[1]);
 		}
-	}
+	}*/
 
-	IEnumerator LoadDelay(string ls)
+	IEnumerator LoadDelay(string scenename)
 	{
+		player.SetActive(false);
 		SceneManager.LoadScene("LoadScene");
 		yield return new WaitForSeconds(2f);
-		SceneManager.LoadScene(ls);
+		SceneManager.LoadScene(scenename);
+		player.SetActive(true);
 	}
 }
