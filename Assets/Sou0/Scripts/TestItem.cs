@@ -38,6 +38,7 @@ public class TestItem : NPC
         inven_Mgr.slot[EmptySlot].MaxCount = this.ItemInfo.InvenMaxCount;
         inven_Mgr.slot[EmptySlot].Count++;
         inven_Mgr.slot[EmptySlot].Name = this.ItemInfo.ItemName;
+        inven_Mgr.slot[EmptySlot].ItemImage.sprite = this.ItemInfo.ItemImage;
         Destroy(this.gameObject);
 
     }
