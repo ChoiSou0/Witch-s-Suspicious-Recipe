@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum animal_Ani
+{
+	NONE, IDLE, WALK
+}
+
 public class Animal : MonoBehaviour
 {
 	public bool moveOn;
@@ -15,6 +20,8 @@ public class Animal : MonoBehaviour
 
 	private Coroutine resetCoroutine;
 
+	[SerializeField] private animal_Ani animal_Ani;
+	[SerializeField] private bool Creem = true;
 	public Animator animalAnim;
 
 	void Start()
@@ -52,13 +59,31 @@ public class Animal : MonoBehaviour
 					isreset = false;
 					StartCoroutine(ResetCoroutine());
 				}
-				animalAnim.SetInteger("state", 0);
+				animal_Ani = animal_Ani.IDLE;
+				Animation();
 			}
 			else
 			{
-				animalAnim.SetInteger("state", 1);
+				animal_Ani = animal_Ani.WALK;
+				Animation();
 			}
 			transform.localPosition = Vector2.MoveTowards(transform.localPosition, endPos, moveSpeed * Time.deltaTime);
+		}
+	}
+
+	private void Animation()
+	{
+		animalAnim.SetBool("IDLE", false);
+		animalAnim.SetBool("WALK", false);
+
+		switch (animal_Ani)
+		{
+			case animal_Ani.IDLE:
+				animalAnim.SetBool("IDLE", true);
+				break;
+			case animal_Ani.WALK:
+				animalAnim.SetBool("WALK", true);
+				break;
 		}
 	}
 
