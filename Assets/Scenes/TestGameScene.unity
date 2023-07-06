@@ -3747,9 +3747,9 @@ MonoBehaviour:
   <Type>k__BackingField: 2
   <enable>k__BackingField: 0
   NearUi: {fileID: 0}
-  CreemSheep_Ani: 1
+  CreemSheep_Ani: 2
   ItemInfo: {fileID: 0}
-  Creem: 0
+  Creem: 1
 --- !u!1 &1558870947
 GameObject:
   m_ObjectHideFlags: 0
