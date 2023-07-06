@@ -21,7 +21,7 @@ public class Animal : MonoBehaviour
 	private Coroutine resetCoroutine;
 
 	[SerializeField] private animal_Ani animal_Ani;
-	[SerializeField] private bool Creem = true;
+	[SerializeField] private bool Cream = true;
 	public Animator animalAnim;
 
 	void Start()
@@ -34,6 +34,7 @@ public class Animal : MonoBehaviour
 	void Update()
 	{
 		Move();
+		Debug.Log(Cream);
 	}
 
 	IEnumerator ResetCoroutine()
@@ -73,17 +74,41 @@ public class Animal : MonoBehaviour
 
 	private void Animation()
 	{
-		animalAnim.SetBool("IDLE", false);
-		animalAnim.SetBool("WALK", false);
-
-		switch (animal_Ani)
+		if (true) //캐릭터 구분할 조건문 넣기
 		{
-			case animal_Ani.IDLE:
-				animalAnim.SetBool("IDLE", true);
-				break;
-			case animal_Ani.WALK:
-				animalAnim.SetBool("WALK", true);
-				break;
+			animalAnim.SetBool("isIdle(Cream)", false);
+			animalAnim.SetBool("isWalk(Cream)", false);
+			animalAnim.SetBool("isWalk(No)", false);
+			switch (animal_Ani)
+			{
+				case animal_Ani.IDLE:
+					animalAnim.SetBool("isIdle(Cream)", true);
+					break;
+				case animal_Ani.WALK:
+					if (Cream)
+					{
+						animalAnim.SetBool("isWalk(Cream)", true);
+					}
+					else
+					{
+						animalAnim.SetBool("isWalk(No)", true);
+					}
+					break;
+			}
+		}
+		else if (true) //캐릭터 추가하기
+		{
+			animalAnim.SetBool("isIdle", false);
+			animalAnim.SetBool("isWalk", false);
+			switch (animal_Ani)
+			{
+				case animal_Ani.IDLE:
+					animalAnim.SetBool("isIdle", true);
+					break;
+				case animal_Ani.WALK:
+					animalAnim.SetBool("isWalk", true);
+					break;
+			}
 		}
 	}
 

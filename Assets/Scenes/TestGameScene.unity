@@ -3690,7 +3690,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1537217855}
   - component: {fileID: 1537217854}
-  - component: {fileID: 1537217856}
   m_Layer: 0
   m_Name: CreemSheep
   m_TagString: Untagged
@@ -3715,6 +3714,8 @@ MonoBehaviour:
   moveSpeed: 1
   minDelay: 2
   maxDelay: 5
+  animal_Ani: 0
+  Creem: 1
   animalAnim: {fileID: 1868937830}
 --- !u!4 &1537217855
 Transform:
@@ -3732,24 +3733,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1537217856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1537217853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54ef9a912c57dd84484f7f16a4c2708b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Type>k__BackingField: 2
-  <enable>k__BackingField: 0
-  NearUi: {fileID: 0}
-  CreemSheep_Ani: 2
-  ItemInfo: {fileID: 0}
-  Creem: 1
 --- !u!1 &1558870947
 GameObject:
   m_ObjectHideFlags: 0
