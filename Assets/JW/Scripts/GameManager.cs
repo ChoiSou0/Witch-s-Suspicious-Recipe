@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
 	[HideInInspector] public bool isSeeOpening1;
 	[HideInInspector] public bool isSeeOpening2;
+	[HideInInspector] public bool isSeeOpening3;
 
 	private void Start()
 	{

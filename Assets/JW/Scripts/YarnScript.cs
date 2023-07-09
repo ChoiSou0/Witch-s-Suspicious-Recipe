@@ -103,4 +103,25 @@ public class YarnScript : MonoBehaviour
 			Glass.GetComponent<Image>().color = new Color(128f / 255f, 128f / 255f, 128f / 255f);
 		}
 	}
+
+	[YarnCommand("ChaUnknown")]
+	public void ChaUnknown(string name)
+	{
+		if (name == "Player")
+		{
+			Player.GetComponent<Image>().color = new Color(0f / 255f, 0f / 255f, 0f / 255f);
+		}
+		else if (name == "GrandFather")
+		{
+			GrandFather.GetComponent<Image>().color = new Color(0f / 255f, 0f / 255f, 0f / 255f);
+		}
+		else if (name == "Dog")
+		{
+			Dog.GetComponent<Image>().color = new Color(0f / 255f, 0f / 255f, 0f / 255f);
+		}
+		else if (name == "Glass")
+		{
+			Glass.GetComponent<Image>().color = new Color(0f / 255f, 0f / 255f, 0f / 255f);
+		}
+	}
 }

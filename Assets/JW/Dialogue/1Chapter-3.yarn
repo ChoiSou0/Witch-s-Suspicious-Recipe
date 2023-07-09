@@ -1,5 +1,67 @@
 ﻿title: 1Chapter-3
 tags:
 ---
-
+<<ChaOn YarnScript Player>>
+<<ChaOn YarnScript Dog>>
+<<ChaBlack YarnScript Player>>
+<<ChaWhite YarnScript Dog>>
+올리버: "안녕하세요. 마법협회에서 나왔습니다. 유리아, 맞으신가요?"
+<<ChaWhite YarnScript Player>>
+<<ChaBlack YarnScript Dog>>
+유리아: "네, 제가 유리아인데요...무슨 일 있나요?"
+<<ChaBlack YarnScript Player>>
+<<ChaWhite YarnScript Dog>>
+올리버: "유리아님의 이름으로 편지가 도착해서 전해주러 왔습니다. 다른 일이 있으시면 저를 찾아주시면 됩니다."
+<<ChaWhite YarnScript Player>>
+<<ChaBlack YarnScript Dog>>
+유리아: "무슨 편지지? 할아버지가 보내신 편지네."
+<<ChaOff YarnScript Dog>>
+->할아버지가 보낸 편지 보기
+	사랑하는 유리아에게
+	유리아야. 미안하다. 이 할애비는 아마 영원히 돌아가지 못할 것 같아. 미안하다. -생략 할애비가 염치없지만 부탁할 것이 있단다.
+	할애비 대신 호박파이의 레시피를 완성해주지 않겠니? 이런 부탁을 해서 정말 미안하단다.
+유리아: "할아버지...아아...흑."
+유리아: "할아버지가 못 만드신 레시피를 완성시키겠어"
+<<ChaOff YarnScript Player>>
+다음날 아침
+<<ChaOn YarnScript Player>>
+<<ChaWhite YarnScript Player>>
+유리아: "콜록콜록, 으...먼지, 치워도 끝이 없네."
+<<ChaOn YarnScript Glass>>
+<<ChaWhite YarnScript Glass>>
+엘빈: "유리아? 안에 있는거야?"
+<<ChaWhite YarnScript Player>>
+<<ChaBlack YarnScript Glass>>
+유리아: "이 목소리는 엘빈?"
+->문을 열어주기
+	유리아: "정말 엘빈이야? 너무 오랜만이야!"
+<<ChaBlack YarnScript Player>>
+<<ChaWhite YarnScript Glass>>
+엘빈: "그동안 어떻게 된거야? 불러도 나오지않고 뭐했어? 왜 거의 1년 내내 계속 잠만 자고 있었냐고!"
+<<ChaWhite YarnScript Player>>
+<<ChaBlack YarnScript Glass>>
+유리아: "뭐? 잠든지 1년이 되어간다고? 그렇게 오래잔지 몰랐어."
+<<ChaBlack YarnScript Player>>
+<<ChaWhite YarnScript Glass>>
+엘빈: "그래도 다시 만나서 다행이야. 사실은 오늘도 네 상태를 확인하러 온건데 마침 깨어났으니 부탁하고 싶은게 잇어."
+<<ChaWhite YarnScript Player>>
+<<ChaBlack YarnScript Glass>>
+유리아: "무슨 부탁인데...?"
+<<ChaBlack YarnScript Player>>
+<<ChaWhite YarnScript Glass>>
+엘빈: "너가 마을 촌장님의 생일케이크를 만들어 줬으면 해."
+<<ChaWhite YarnScript Player>>
+<<ChaBlack YarnScript Glass>>
+유리아: "뭐? 너 내가 어떤 상태인지 알잖아. 어떻게 의뢰를 할 수 있어!"
+<<ChaBlack YarnScript Player>>
+<<ChaWhite YarnScript Glass>>
+엘빈: "정말 미안. 하지만 이 의뢰를 할 수 있는 건 너뿐이라 그래."
+<<ChaWhite YarnScript Player>>
+<<ChaBlack YarnScript Glass>>
+유리아: "그렇다면 알겠어...잘 할지는 모르겠지만 한 번 해볼게."
+<<ChaBlack YarnScript Player>>
+<<ChaWhite YarnScript Glass>>
+엘빈: "고마워. 유리아. 그럼 기대하고 있을게."
+<<ChaOff YarnScript Player>>
+<<ChaOff YarnScript Glass>>
 ===

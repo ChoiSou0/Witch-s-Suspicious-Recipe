@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Kitchen : MonoBehaviour
+public class Door : MonoBehaviour
 {
 	private GameManager GM;
 
@@ -13,10 +13,10 @@ public class Kitchen : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.tag == "Player" && GM.isSeeOpening1 == true && GM.isSeeOpening2 == false)
+		if (collision.tag == "Player" && GM.isSeeOpening2 == true && GM.isSeeOpening3 == false)
 		{
-			GM.isSeeOpening2 = true;
-			GM.dialogue.StartDialogue("1Chapter-2");
+			GM.isSeeOpening3 = true;
+			GM.dialogue.StartDialogue("1Chapter-3");
 		}
 	}
 }
