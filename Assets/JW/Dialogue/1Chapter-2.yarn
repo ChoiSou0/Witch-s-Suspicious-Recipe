@@ -3,6 +3,7 @@ tags:
 ---
 <<ChaOn YarnScript Player>>
 <<ChaWhite YarnScript Player>>
+<<BGOn YarnScript>>
 유리아: "주방에 계신가?"
 유리아: "이 쪽지는 뭐지?"
 ->쪽지 보기
@@ -18,4 +19,5 @@ tags:
 -> 문으로 가서 열기
 	<<ChaOff YarnScript Player>>
 	<<ChaOff YarnScript Dog>>
+	<<BGOff YarnScript>>
 ===

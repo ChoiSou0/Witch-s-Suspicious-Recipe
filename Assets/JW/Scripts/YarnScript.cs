@@ -8,10 +8,11 @@ public class YarnScript : MonoBehaviour
 {
 	public SoundManager soundManager;
 
+	public GameObject Background;
+
 	public GameObject Player;
 	public GameObject Dog;
 	public GameObject Glass;
-	public GameObject GrandFather;
 
 	[YarnCommand("PlaySE")]
 	public void PlaySE()
@@ -20,16 +21,24 @@ public class YarnScript : MonoBehaviour
 		soundManager.PlaySE(Resources.Load<AudioClip>("Clip/MP_Pew Pew"));
 	}
 
+	[YarnCommand("BGOn")]
+	public void BGOn()
+	{
+		Background.SetActive(true);
+	}
+
+	[YarnCommand("BGOff")]
+	public void BGOff()
+	{
+		Background.SetActive(false);
+	}
+
 	[YarnCommand("ChaOn")]
 	public void ChaOn(string name)
 	{
 		if (name == "Player")
 		{
 			Player.SetActive(true);
-		}
-		else if (name == "GrandFather")
-		{
-			GrandFather.SetActive(true);
 		}
 		else if (name == "Dog")
 		{
@@ -48,10 +57,6 @@ public class YarnScript : MonoBehaviour
 		{
 			Player.SetActive(false);
 		}
-		else if (name == "GrandFather")
-		{
-			GrandFather.SetActive(false);
-		}
 		else if (name == "Dog")
 		{
 			Dog.SetActive(false);
@@ -68,10 +73,6 @@ public class YarnScript : MonoBehaviour
 		if (name == "Player")
 		{
 			Player.GetComponent<Image>().color = new Color(255f / 255f, 255f / 255f, 255f / 255f);
-		}
-		else if (name == "GrandFather")
-		{
-			GrandFather.GetComponent<Image>().color = new Color(255f / 255f, 255f / 255f, 255f / 255f);
 		}
 		else if (name == "Dog")
 		{
@@ -90,10 +91,6 @@ public class YarnScript : MonoBehaviour
 		{
 			Player.GetComponent<Image>().color = new Color(128f / 255f, 128f / 255f, 128f / 255f);
 		}
-		else if (name == "GrandFather")
-		{
-			GrandFather.GetComponent<Image>().color = new Color(128f / 255f, 128f / 255f, 128f / 255f);
-		}
 		else if (name == "Dog")
 		{
 			Dog.GetComponent<Image>().color = new Color(128f / 255f, 128f / 255f, 128f / 255f);
@@ -110,10 +107,6 @@ public class YarnScript : MonoBehaviour
 		if (name == "Player")
 		{
 			Player.GetComponent<Image>().color = new Color(0f / 255f, 0f / 255f, 0f / 255f);
-		}
-		else if (name == "GrandFather")
-		{
-			GrandFather.GetComponent<Image>().color = new Color(0f / 255f, 0f / 255f, 0f / 255f);
 		}
 		else if (name == "Dog")
 		{

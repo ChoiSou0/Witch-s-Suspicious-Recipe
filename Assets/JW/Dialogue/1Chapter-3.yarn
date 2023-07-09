@@ -5,6 +5,7 @@ tags:
 <<ChaOn YarnScript Dog>>
 <<ChaBlack YarnScript Player>>
 <<ChaWhite YarnScript Dog>>
+<<BGOn YarnScript>>
 올리버: "안녕하세요. 마법협회에서 나왔습니다. 유리아, 맞으신가요?"
 <<ChaWhite YarnScript Player>>
 <<ChaBlack YarnScript Dog>>
@@ -64,4 +65,5 @@ tags:
 엘빈: "고마워. 유리아. 그럼 기대하고 있을게."
 <<ChaOff YarnScript Player>>
 <<ChaOff YarnScript Glass>>
+<<BGOff YarnScript>>
 ===
