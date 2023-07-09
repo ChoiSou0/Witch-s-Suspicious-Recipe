@@ -1,15 +1,37 @@
 ﻿title: 1Chapter
 tags:
 ---
+<<ChaOn YarnScript Player>>
+<<ChaOn YarnScript GrandFather>>
+<<ChaWhite YarnScript Player>>
+<<ChaBlack YarnScript GrandFather>>
 유리아: "할아버지 뭐 하시는거예요?"
+<<ChaBlack YarnScript Player>>
+<<ChaWhite YarnScript GrandFather>>
 할아버지: "응? 할아버지는 잠깐 멀리갈 준비하고 있지."
+<<ChaWhite YarnScript Player>>
+<<ChaBlack YarnScript GrandFather>>
 유리아: "헉! 멀리간다고요? 저도 따라서 갈래요."
+<<ChaBlack YarnScript Player>>
+<<ChaWhite YarnScript GrandFather>>
 할아버지: "따라가는건 안된단다. 거긴 많이 위험해. 유리아는 집에 있으렴."
+<<ChaWhite YarnScript Player>>
+<<ChaBlack YarnScript GrandFather>>
 유리아: "싫어요...할아버지랑 같이 갈 거예요!"
+<<ChaBlack YarnScript Player>>
+<<ChaWhite YarnScript GrandFather>>
 할아버지: "미안하다. 유리아야."
+<<ChaWhite YarnScript Player>>
+<<ChaBlack YarnScript GrandFather>>
 유리아: "네?...할아버지 무슨 짓을...쿨쿨."
+<<ChaBlack YarnScript Player>>
+<<ChaWhite YarnScript GrandFather>>
 할아버지: "미안하다. 하지만 널 데려가기에는 너무 위험해. 내가 돌아올 때 동안 잘 자고 있으렴... 미안하다."
+<<ChaOff YarnScript Player>>
+<<ChaOff YarnScript GrandFather>>
 1년 후
+<<ChaOn YarnScript Player>>
+<<ChaWhite YarnScript Player>>
 유리아: "하우음...얼마나 잔 거지?"
 유리아: "할아버지!할아버지!"
 유리아: "할아버지는 어디가신거지?"
@@ -20,6 +42,9 @@ tags:
 	사랑하는 유리아에게
 	너를 잠재워 두고 가서 정말 미안하단다. 하지만 할애비는 그곳을 꼭 가야만 했단다. 정말 미안하단다. -이하 생략
 유리아: "할아버지..."
+<<ChaOn YarnScript Player>>
+<<ChaOn 
+<<ChaWhite YarnScript Player>>
 올리버: "안에 계신가요?"
 유리아: "누구지?"
 -> 문으로 가서 열기
