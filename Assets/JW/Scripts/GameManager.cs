@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
 	private void Start()
 	{
 		SceneManager.sceneLoaded += SceneLoaded;
-		SceneManager.LoadScene("TitleScene");
+		//SceneManager.LoadScene("TitleScene");
 	}
 
 	public void Loading(string scenename)
@@ -37,6 +37,11 @@ public class GameManager : MonoBehaviour
 
 	private void SceneLoaded(Scene scene, LoadSceneMode mode)
 	{
+		if (isWarp == true)
+		{
+			isWarp = false;
+			player.transform.localPosition = new Vector2(warploc[0], warploc[1]);
+		}
 		if (scene.name == "YuriaShop(InSide)")
 		{
 			if (isSeeOpening1 == false)
