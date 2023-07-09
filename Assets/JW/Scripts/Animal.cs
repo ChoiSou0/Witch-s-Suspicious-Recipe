@@ -34,7 +34,6 @@ public class Animal : MonoBehaviour
 	void Update()
 	{
 		Move();
-		Debug.Log(Cream);
 	}
 
 	IEnumerator ResetCoroutine()
@@ -53,7 +52,7 @@ public class Animal : MonoBehaviour
 	{
 		if (moveOn)
 		{
-			if (transform.localPosition == endPos)
+			if (gameObject.transform.GetChild(0).gameObject.transform.localPosition == endPos)
 			{
 				if (isreset == true)
 				{
@@ -68,7 +67,15 @@ public class Animal : MonoBehaviour
 				animal_Ani = animal_Ani.WALK;
 				Animation();
 			}
-			transform.localPosition = Vector2.MoveTowards(transform.localPosition, endPos, moveSpeed * Time.deltaTime);
+			if (gameObject.transform.GetChild(0).gameObject.transform.localPosition.x < endPos.x)
+			{
+				gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().flipX = true;
+			}
+			else if (gameObject.transform.GetChild(0).gameObject.transform.localPosition.x > endPos.x)
+			{
+				gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().flipX = false;
+			}
+			gameObject.transform.GetChild(0).gameObject.transform.localPosition = Vector2.MoveTowards(gameObject.transform.GetChild(0).gameObject.transform.localPosition, endPos, moveSpeed * Time.deltaTime);
 		}
 	}
 
