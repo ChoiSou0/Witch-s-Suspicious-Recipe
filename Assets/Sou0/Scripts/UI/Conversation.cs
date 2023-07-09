@@ -87,11 +87,16 @@ public class Conversation : MonoBehaviour
 
     private void Awake()
     {
-        inven_Mgr = GameObject.FindObjectOfType<Inven_Mgr>();
+        
 
 
     }
-    
+
+    private void Update()
+    {
+        inven_Mgr = GameObject.FindObjectOfType<Inven_Mgr>();
+    }
+
     // 클릭할 시에 아이템 조합이 이루어 지는 함수
     public void ClickConversation()
     {
@@ -175,7 +180,7 @@ public class Conversation : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-            //SelectionImg[i].sprite = null;
+            SelectionImg[i].sprite = null;
             SelectionTxt[i].text = "";
         }
         SelectionItem.Clear();
