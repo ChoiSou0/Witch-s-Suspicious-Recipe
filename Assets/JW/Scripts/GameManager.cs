@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Yarn.Unity;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,9 +11,14 @@ public class GameManager : MonoBehaviour
 	private bool isWarp;
 	public bool isWarped;
 
+	[SerializeField] private GameObject dialogueObj;
+	[SerializeField] private DialogueRunner dialogue;
+
+	private bool isSeeOpening;
+
 	private void Start()
 	{
-		//SceneManager.sceneLoaded += SceneLoaded;
+		SceneManager.sceneLoaded += SceneLoaded;
 		SceneManager.LoadScene("TitleScene");
 	}
 
@@ -28,14 +34,17 @@ public class GameManager : MonoBehaviour
 		StartCoroutine(LoadDelay(scenename));
 	}
 
-	/*private void SceneLoaded(Scene scene, LoadSceneMode mode)
+	private void SceneLoaded(Scene scene, LoadSceneMode mode)
 	{
-		if (isWarp == true)
+		if (scene.name == "YuriaShop(InSide)")
 		{
-			isWarp = false;
-			player.transform.localPosition = new Vector2(warploc[0], warploc[1]);
+			if (isSeeOpening == false)
+			{
+				isSeeOpening = true;
+				dialogue.StartDialogue("1Chapter");
+			}
 		}
-	}*/
+	}
 
 	IEnumerator LoadDelay(string scenename)
 	{
