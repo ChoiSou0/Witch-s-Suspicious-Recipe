@@ -24,7 +24,7 @@ public class Slot : MonoBehaviour
 
     private void Update()
     {
-        //UIConstantChange();
+        UIConstantChange();
     }
 
     // 아이콘을 클릭했을 때, 여러가지 선택창이 나오게 하는것
@@ -68,14 +68,14 @@ public class Slot : MonoBehaviour
     {
         if (gameObject.activeSelf && ItemInfo != null)
         {
-            //ItemImage.sprite = ItemInfo.ItemImage;
+            ItemImage.sprite = ItemInfo.ItemImage;
             MaxCount = ItemInfo.InvenMaxCount;
             Name = ItemInfo.ItemName;
         }
         
         if (Count <= 0)
         {
-            //ItemImage.sprite = null;
+            ItemImage.sprite = null;
             MaxCount = 0;
             ItemInfo = null;
         }
