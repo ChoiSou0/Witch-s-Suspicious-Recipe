@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d038be38fe8256348b6ae859ebe3779d, type: 3}
+  m_Name: GambasRecipe1
+  m_EditorClassIdentifier: 
+  table: 1
+  IngredientItemInfo:
+  - {fileID: 11400000, guid: f0b488a1092f70a4281d0fbc6e275a10, type: 2}
+  - {fileID: 11400000, guid: 60bc6ed3c914c20408d9d99a24c45910, type: 2}
+  NeedIngredientItemCount: 0100000003000000
+  CombinationItemInfo: {fileID: 11400000, guid: a3cc92de8744c2846818f678ceb9558e, type: 2}
+  AddCombinationItemCount: 1
+  Temperature: 0
+  FireCount: 1
+  RowingType: 0
