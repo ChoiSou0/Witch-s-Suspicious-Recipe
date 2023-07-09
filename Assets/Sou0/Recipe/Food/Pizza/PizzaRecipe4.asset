@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d038be38fe8256348b6ae859ebe3779d, type: 3}
+  m_Name: PizzaRecipe4
+  m_EditorClassIdentifier: 
+  table: 1
+  IngredientItemInfo:
+  - {fileID: 11400000, guid: 67d1fd168bd80a146bc08bc68c83f335, type: 2}
+  - {fileID: 11400000, guid: fdc8cc5acb8fc364d9593c2001027929, type: 2}
+  - {fileID: 11400000, guid: ac904ed87bc679b4082c51d659e342a3, type: 2}
+  NeedIngredientItemCount: 010000000100000001000000
+  CombinationItemInfo: {fileID: 11400000, guid: dd2b95f96fb557048852bad90249064d, type: 2}
+  AddCombinationItemCount: 1
+  Temperature: 0
+  FireCount: 1
+  RowingType: 1
