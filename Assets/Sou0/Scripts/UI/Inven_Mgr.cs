@@ -12,9 +12,9 @@ public class Inven_Mgr : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		SaveManager.Instance.LoadGameData();
-		slot = SaveManager.Instance.data.slot;
-		MaxSlot = SaveManager.Instance.data.MaxSlot;
+		//SaveManager.Instance.LoadGameData();
+		//slot = SaveManager.Instance.data.slot;
+		//MaxSlot = SaveManager.Instance.data.MaxSlot;
 	}
 
 	// Update is called once per frame

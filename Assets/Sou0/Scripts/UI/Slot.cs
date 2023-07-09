@@ -13,6 +13,8 @@ public class Slot : MonoBehaviour
     public int Count;
     public int MaxCount;
     public Item ItemInfo;
+    public bool SlotAwake = false;
+    [SerializeField] private Sprite DontAwakeImage;
 
     private void Awake()
     {
@@ -66,18 +68,27 @@ public class Slot : MonoBehaviour
     // 스크립터블 오브젝트의 정보를 받아온다.
     private void UIConstantChange()
     {
-        if (gameObject.activeSelf && ItemInfo != null)
+        if (SlotAwake)
         {
-            ItemImage.sprite = ItemInfo.ItemImage;
-            MaxCount = ItemInfo.InvenMaxCount;
-            Name = ItemInfo.ItemName;
+            if (gameObject.activeSelf && ItemInfo != null)
+            {
+                ItemImage.sprite = ItemInfo.ItemImage;
+                MaxCount = ItemInfo.InvenMaxCount;
+                Name = ItemInfo.ItemName;
+            }
+
+            if (Count <= 0)
+            {
+                ItemImage.sprite = null;
+                MaxCount = 0;
+                ItemInfo = null;
+            }
         }
-        
-        if (Count <= 0)
+        else
         {
-            ItemImage.sprite = null;
-            MaxCount = 0;
-            ItemInfo = null;
+            ItemImage.sprite = DontAwakeImage;
+            Debug.Log("꺼짐");
+            
         }
     }
 }
