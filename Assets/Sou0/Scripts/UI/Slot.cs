@@ -81,7 +81,7 @@ public class Slot : MonoBehaviour
             {
                 ItemImage.sprite = null;
                 MaxCount = 0;
-                ItemInfo = null;
+                ItemInfo = null; 
             }
         }
         else
