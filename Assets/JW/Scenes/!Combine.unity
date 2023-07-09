@@ -12996,6 +12996,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundManager: {fileID: 721666485}
+  Player: {fileID: 0}
+  Dog: {fileID: 0}
+  Glass: {fileID: 0}
+  GrandFather: {fileID: 0}
 --- !u!4 &1460294676
 Transform:
   m_ObjectHideFlags: 0
@@ -15731,7 +15735,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 24c687e1488b9c446a3ee5c1fd047431, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
