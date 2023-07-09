@@ -8,7 +8,7 @@ using UnityEditor;
 [System.Serializable]
 public enum InteractionType
 {
-    NONE, SHOP, ITEM ,CONVERSATION, PLANT, STORAGESPACE
+    NONE, SHOP, ITEM ,CONVERSATION, PLANT, STORAGESPACE, MAGIC
 }
 
 public interface Interaction_Info
@@ -17,7 +17,6 @@ public interface Interaction_Info
     bool enable { get; set; }
 
     void ActionKey();
-
 }
 
 
@@ -80,7 +79,10 @@ public class NPC : MonoBehaviour, Interaction_Info
                 case InteractionType.STORAGESPACE:
                     Debug.Log("¼ö³³°ø°£ ¿ÀÇÂ");
                     break;
-            }
+				case InteractionType.MAGIC:
+					Debug.Log("¸¶¹ý¿ÀÇÂ");
+					break;
+			}
 #endif
 
             ActionKey();
