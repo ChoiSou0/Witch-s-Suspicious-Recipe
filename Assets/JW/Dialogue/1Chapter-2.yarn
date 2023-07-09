@@ -10,14 +10,14 @@ tags:
 	사랑하는 유리아에게
 	너를 잠재워 두고 가서 정말 미안하단다. 하지만 할애비는 그곳을 꼭 가야만 했단다. 정말 미안하단다. -이하 생략
 유리아: "할아버지..."
-<<ChaOn YarnScript Dog>>
+<<ChaOn YarnScript Glass>>
 <<ChaBlack YarnScript Player>>
-<<ChaUnknown YarnScript Dog>>
+<<ChaUnknown YarnScript Glass>>
 ???: "안에 계신가요?"
 <<ChaWhite YarnScript Player>>
 유리아: "누구지?"
 -> 문으로 가서 열기
 	<<ChaOff YarnScript Player>>
-	<<ChaOff YarnScript Dog>>
+	<<ChaOff YarnScript Glass>>
 	<<BGOff YarnScript>>
 ===
