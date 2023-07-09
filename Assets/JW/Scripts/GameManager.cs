@@ -11,10 +11,10 @@ public class GameManager : MonoBehaviour
 	private bool isWarp;
 	public bool isWarped;
 
-	[SerializeField] private GameObject dialogueObj;
-	[SerializeField] private DialogueRunner dialogue;
+	public DialogueRunner dialogue;
 
-	private bool isSeeOpening;
+	[HideInInspector] public bool isSeeOpening1;
+	[HideInInspector] public bool isSeeOpening2;
 
 	private void Start()
 	{
@@ -38,10 +38,10 @@ public class GameManager : MonoBehaviour
 	{
 		if (scene.name == "YuriaShop(InSide)")
 		{
-			if (isSeeOpening == false)
+			if (isSeeOpening1 == false)
 			{
-				isSeeOpening = true;
-				dialogue.StartDialogue("1Chapter");
+				isSeeOpening1 = true;
+				dialogue.StartDialogue("1Chapter-1");
 			}
 		}
 	}
