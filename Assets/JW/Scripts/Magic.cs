@@ -221,8 +221,14 @@ public class Magic : MonoBehaviour
 		}
 		isComplete = true;
 
-		CheckShape(new int[] { 0, 10, 6, 15, 12, 17, 21, 23 }, "ㄹ");
-		CheckShape(new int[] { 12, 15 }, "a");
+		CheckShape(new int[] { 0, 10, 8, 19, 21, 23 }, "뱀");
+		CheckShape(new int[] { 2, 22, 23, 27, 15, 12 }, "마늘");
+		CheckShape(new int[] { 11, 17, 21, 23, 27 }, "크림");
+
+		//CheckShape(new int[] { 0, 10, 6, 15, 12, 17, 21, 23 }, "ㄹ");
+		//CheckShape(new int[] { 12, 15 }, "a");
+
+
 		//CheckShape(new int[] { 1, 2, 3, 6, 5, 4, 7, 8, 9 }, 9, "ㄹ");
 		//CheckShape(new int[] { 5, 6, 3, 2, 1, 4, 7, 8, 9 }, 9, "e");
 		//CheckShape(new int[] { 1, 4, 7, 8, 9, 6, 3 }, 7, "U");
@@ -268,9 +274,9 @@ public class Magic : MonoBehaviour
 		{
 			Debug.Log(printText);
 		}
-		Debug.Log(counter);
-		Debug.Log(correctNum);
-		Debug.Log(reachNum);
-		Debug.Log(fail);
+		//Debug.Log(counter);
+		//Debug.Log(correctNum);
+		//Debug.Log(reachNum);
+		//Debug.Log(fail);
 	}
 }
