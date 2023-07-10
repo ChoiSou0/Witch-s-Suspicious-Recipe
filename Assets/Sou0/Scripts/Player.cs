@@ -41,13 +41,109 @@ public class Player : MonoBehaviour
 	{
 		if (DontMove == true)
 		{
-			rb2D.velocity = new Vector3(0, 0, 0);
+			rb2D.velocity = Vector3.zero;
 		}
 		else
 		{
-		Move();
+			Move();
 		}
+		StartCoroutine(Test());
 		StartCoroutine(Animation());
+	}
+
+	IEnumerator Test()
+	{
+		if (RastVec == 4 || RastVec == 5 || RastVec == 7 || RastVec == 8)
+		{
+			if (Input.GetKeyUp(KeyCode.W))
+			{
+				Debug.Log("W");
+				if (Input.GetKey(KeyCode.A))
+				{
+					yield return new WaitForSecondsRealtime(0.5f);
+					if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+					{
+						Debug.Log("A");
+						RastVec = 4;
+					}
+				}
+				else if (Input.GetKey(KeyCode.D))
+				{
+					yield return new WaitForSecondsRealtime(0.5f);
+					if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+					{
+						Debug.Log("D");
+						RastVec = 7;
+					}
+				}
+			}
+			else if (Input.GetKeyUp(KeyCode.A))
+			{
+				Debug.Log("A");
+				if (Input.GetKey(KeyCode.W))
+				{
+					yield return new WaitForSecondsRealtime(0.5f);
+					if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
+					{
+						Debug.Log("W");
+						RastVec = 4;
+					}
+				}
+				if (Input.GetKey(KeyCode.S))
+				{
+					yield return new WaitForSecondsRealtime(0.5f);
+					if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
+					{
+						Debug.Log("S");
+						RastVec = 5;
+					}
+				}
+			}
+			else if (Input.GetKeyUp(KeyCode.S))
+			{
+				Debug.Log("S");
+				if (Input.GetKey(KeyCode.A))
+				{
+					yield return new WaitForSecondsRealtime(0.5f);
+					if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+					{
+						Debug.Log("A");
+						RastVec = 5;
+					}
+				}
+				if (Input.GetKey(KeyCode.D))
+				{
+					yield return new WaitForSecondsRealtime(0.5f);
+					if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+					{
+						Debug.Log("D");
+						RastVec = 8;
+					}
+				}
+			}
+			else if (Input.GetKeyUp(KeyCode.D))
+			{
+				Debug.Log("D");
+				if (Input.GetKey(KeyCode.W))
+				{
+					yield return new WaitForSecondsRealtime(0.5f);
+					if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
+					{
+						Debug.Log("W");
+						RastVec = 7;
+					}
+				}
+				if (Input.GetKey(KeyCode.S))
+				{
+					yield return new WaitForSecondsRealtime(0.5f);
+					if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
+					{
+						Debug.Log("S");
+						RastVec = 8;
+					}
+				}
+			}
+		}
 	}
 
 	IEnumerator Animation()
@@ -77,77 +173,70 @@ public class Player : MonoBehaviour
 						animator.SetBool("isFrontIdle", true);
 						break;
 					case 3:
-						spriteRenderer.flipX = false;
+						spriteRenderer.flipX = true;
 						animator.SetBool("isRightIdle", true);
 						break;
 					case 4:
-						spriteRenderer.flipX = false;
+						spriteRenderer.flipX = true;
 						animator.SetBool("isRightUpIdle", true);
 						break;
 					case 5:
-						spriteRenderer.flipX = false;
+						spriteRenderer.flipX = true;
 						animator.SetBool("isRightDownIdle", true);
 						break;
 					case 6:
-						spriteRenderer.flipX = true;
+						spriteRenderer.flipX = false;
 						animator.SetBool("isRightIdle", true);
 						break;
 					case 7:
-						spriteRenderer.flipX = true;
+						spriteRenderer.flipX = false;
 						animator.SetBool("isRightUpIdle", true);
 						break;
 					case 8:
-						spriteRenderer.flipX = true;
+						spriteRenderer.flipX = false;
 						animator.SetBool("isRightDownIdle", true);
 						break;
+
 				}
 				break;
 			case Ani_Type.UP:
 				spriteRenderer.flipX = false;
 				animator.SetBool("isBehindWalk", true);
-				yield return new WaitForSecondsRealtime(0.1f);
 				RastVec = 1;
 				break;
 			case Ani_Type.DOWN:
 				spriteRenderer.flipX = false;
 				animator.SetBool("isFrontWalk", true);
-				yield return new WaitForSecondsRealtime(0.1f);
 				RastVec = 2;
-				break;
-			case Ani_Type.RIGHT:
-				spriteRenderer.flipX = false;
-				animator.SetBool("isRightWalk", true);
-				yield return new WaitForSecondsRealtime(0.1f);
-				RastVec = 3;
-				break;
-			case Ani_Type.RIGHTUP:
-				spriteRenderer.flipX = false;
-				animator.SetBool("isRightUpWalk", true);
-				yield return new WaitForSecondsRealtime(0.1f);
-				RastVec = 4;
-				break;
-			case Ani_Type.RIGHTDOWN:
-				spriteRenderer.flipX = false;
-				animator.SetBool("isRightDownWalk", true);
-				yield return new WaitForSecondsRealtime(0.1f);
-				RastVec = 5;
 				break;
 			case Ani_Type.LEFT:
 				spriteRenderer.flipX = true;
 				animator.SetBool("isRightWalk", true);
-				yield return new WaitForSecondsRealtime(0.1f);
-				RastVec = 6;
+				RastVec = 3;
 				break;
 			case Ani_Type.LEFTUP:
 				spriteRenderer.flipX = true;
 				animator.SetBool("isRightUpWalk", true);
-				yield return new WaitForSecondsRealtime(0.1f);
-				RastVec = 7;
+				RastVec = 4;
 				break;
 			case Ani_Type.LEFTDOWN:
 				spriteRenderer.flipX = true;
 				animator.SetBool("isRightDownWalk", true);
-				yield return new WaitForSecondsRealtime(0.1f);
+				RastVec = 5;
+				break;
+			case Ani_Type.RIGHT:
+				spriteRenderer.flipX = false;
+				animator.SetBool("isRightWalk", true);
+				RastVec = 6;
+				break;
+			case Ani_Type.RIGHTUP:
+				spriteRenderer.flipX = false;
+				animator.SetBool("isRightUpWalk", true);
+				RastVec = 7;
+				break;
+			case Ani_Type.RIGHTDOWN:
+				spriteRenderer.flipX = false;
+				animator.SetBool("isRightDownWalk", true);
 				RastVec = 8;
 				break;
 			case Ani_Type.PICKUP:
@@ -160,8 +249,8 @@ public class Player : MonoBehaviour
 	// 움직임 함수
 	private void Move()
 	{
-		float MoveX = Input.GetAxis("Horizontal");
-		float MoveY = Input.GetAxis("Vertical");
+		float MoveX = Input.GetAxisRaw("Horizontal");
+		float MoveY = Input.GetAxisRaw("Vertical");
 
 		float X = MoveX * Speed * 2;
 		float Y = MoveY * Speed * 2;
@@ -187,7 +276,5 @@ public class Player : MonoBehaviour
 
 		Vector3 GetVel = new Vector3(X, Y, 0);
 		rb2D.velocity = GetVel;
-
-
 	}
 }
