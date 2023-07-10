@@ -1810,7 +1810,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &289166661
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2650,7 +2650,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &409097888
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7673,9 +7673,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemImage: {fileID: 139048176}
   Name: 
-  Count: 0
+  Count: 3
   MaxCount: 0
-  ItemInfo: {fileID: 0}
+  ItemInfo: {fileID: 11400000, guid: fdc8cc5acb8fc364d9593c2001027929, type: 2}
   SlotAwake: 1
   DontAwakeImage: {fileID: 21300000, guid: d2f4f29fdb5743a4d8cbbd5c9510a959, type: 3}
 --- !u!1 &1423406599

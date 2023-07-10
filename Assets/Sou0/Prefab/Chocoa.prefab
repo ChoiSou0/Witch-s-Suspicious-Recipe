@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Type>k__BackingField: 2
-  <enable>k__BackingField: 0
+  <enable>k__BackingField: 1
   NearUi: {fileID: 6142528170179253249}
   ItemInfo: {fileID: 11400000, guid: badd14e0f80e14d4db4480f5123100f4, type: 2}
 --- !u!1001 &4454592095397396682
