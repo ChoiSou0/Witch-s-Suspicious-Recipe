@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
 		}
 		else
 		{
-			Move();
+		Move();
 		}
 		StartCoroutine(Animation());
 	}
@@ -66,7 +66,6 @@ public class Player : MonoBehaviour
 		switch (AniType)
 		{
 			case Ani_Type.IDLE:
-				//Debug.Log(RastVec);
 				switch (RastVec)
 				{
 					case 1:
@@ -84,12 +83,10 @@ public class Player : MonoBehaviour
 					case 4:
 						spriteRenderer.flipX = false;
 						animator.SetBool("isRightUpIdle", true);
-						Debug.Log("asd");
 						break;
 					case 5:
 						spriteRenderer.flipX = false;
 						animator.SetBool("isRightDownIdle", true);
-						Debug.Log("asd");
 						break;
 					case 6:
 						spriteRenderer.flipX = true;
@@ -98,12 +95,10 @@ public class Player : MonoBehaviour
 					case 7:
 						spriteRenderer.flipX = true;
 						animator.SetBool("isRightUpIdle", true);
-						Debug.Log("asd");
 						break;
 					case 8:
 						spriteRenderer.flipX = true;
 						animator.SetBool("isRightDownIdle", true);
-						Debug.Log("asd");
 						break;
 				}
 				break;
@@ -111,41 +106,49 @@ public class Player : MonoBehaviour
 				spriteRenderer.flipX = false;
 				animator.SetBool("isBehindWalk", true);
 				yield return new WaitForSecondsRealtime(0.1f);
+				RastVec = 1;
 				break;
 			case Ani_Type.DOWN:
 				spriteRenderer.flipX = false;
 				animator.SetBool("isFrontWalk", true);
 				yield return new WaitForSecondsRealtime(0.1f);
+				RastVec = 2;
 				break;
 			case Ani_Type.RIGHT:
 				spriteRenderer.flipX = false;
 				animator.SetBool("isRightWalk", true);
 				yield return new WaitForSecondsRealtime(0.1f);
+				RastVec = 3;
 				break;
 			case Ani_Type.RIGHTUP:
 				spriteRenderer.flipX = false;
 				animator.SetBool("isRightUpWalk", true);
 				yield return new WaitForSecondsRealtime(0.1f);
+				RastVec = 4;
 				break;
 			case Ani_Type.RIGHTDOWN:
 				spriteRenderer.flipX = false;
 				animator.SetBool("isRightDownWalk", true);
 				yield return new WaitForSecondsRealtime(0.1f);
+				RastVec = 5;
 				break;
 			case Ani_Type.LEFT:
 				spriteRenderer.flipX = true;
 				animator.SetBool("isRightWalk", true);
 				yield return new WaitForSecondsRealtime(0.1f);
+				RastVec = 6;
 				break;
 			case Ani_Type.LEFTUP:
 				spriteRenderer.flipX = true;
 				animator.SetBool("isRightUpWalk", true);
 				yield return new WaitForSecondsRealtime(0.1f);
+				RastVec = 7;
 				break;
 			case Ani_Type.LEFTDOWN:
 				spriteRenderer.flipX = true;
 				animator.SetBool("isRightDownWalk", true);
 				yield return new WaitForSecondsRealtime(0.1f);
+				RastVec = 8;
 				break;
 			case Ani_Type.PICKUP:
 				break;
@@ -160,58 +163,27 @@ public class Player : MonoBehaviour
 		float MoveX = Input.GetAxis("Horizontal");
 		float MoveY = Input.GetAxis("Vertical");
 
-		if(MoveX!=0 && MoveY != 0)
-		{
-			Debug.Log(MoveX);
-			Debug.Log(MoveY);
-		}
-
 		float X = MoveX * Speed * 2;
 		float Y = MoveY * Speed * 2;
 
 		if (MoveX == 0 && MoveY == 0)
 			AniType = Ani_Type.IDLE;
 		else if (MoveX == 0 && MoveY > 0)
-		{
 			AniType = Ani_Type.UP;
-			RastVec = 1;
-		}
 		else if (MoveX == 0 && MoveY < 0)
-		{
 			AniType = Ani_Type.DOWN;
-			RastVec = 2;
-		}
 		else if (MoveX > 0 && MoveY == 0)
-		{
 			AniType = Ani_Type.RIGHT;
-			RastVec = 3;
-		}
-
-		else if (MoveX > 0 && MoveY > 0)
-		{
-			AniType = Ani_Type.RIGHTUP;
-			RastVec = 4;
-		}
-		else if (MoveX > 0 && MoveY < 0)
-		{
-			AniType = Ani_Type.RIGHTDOWN;
-			RastVec = 5;
-		}
 		else if (MoveX < 0 && MoveY == 0)
-		{
 			AniType = Ani_Type.LEFT;
-			RastVec = 6;
-		}
+		else if (MoveX > 0 && MoveY > 0)
+			AniType = Ani_Type.RIGHTUP;
+		else if (MoveX > 0 && MoveY < 0)
+			AniType = Ani_Type.RIGHTDOWN;
 		else if (MoveX < 0 && MoveY > 0)
-		{
 			AniType = Ani_Type.LEFTUP;
-			RastVec = 7;
-		}
 		else if (MoveX < 0 && MoveY < 0)
-		{
 			AniType = Ani_Type.LEFTDOWN;
-			RastVec = 8;
-		}
 
 		Vector3 GetVel = new Vector3(X, Y, 0);
 		rb2D.velocity = GetVel;

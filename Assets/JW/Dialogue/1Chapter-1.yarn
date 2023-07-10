@@ -1,6 +1,7 @@
 ﻿title: 1Chapter-1
 tags:
 ---
+<<DialogueStart YarnScript>>
 <<ChaOn YarnScript Player>>
 <<ChaWhite YarnScript Player>>
 <<BGOn YarnScript>>
@@ -27,6 +28,6 @@ tags:
 유리아: "할아버지!할아버지!"
 유리아: "할아버지는 어디가신거지?"
 ->주방 살펴보기
-	<<ChaOff YarnScript Player>>
 	<<BGOff YarnScript>>
+	<<DialogueEnd YarnScript>>
 ===

@@ -2113,6 +2113,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4745207724350842407, guid: dd52a2dbc3e9cbe4eb8bced1122a3b3f, type: 3}
   m_PrefabInstance: {fileID: 1439822527}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &339235880 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4745207724350842402, guid: dd52a2dbc3e9cbe4eb8bced1122a3b3f, type: 3}
+  m_PrefabInstance: {fileID: 1439822527}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339235877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0f5c1ba7edb3ec4f8171d9e0e55dbc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &349341761
 GameObject:
   m_ObjectHideFlags: 0
@@ -3220,7 +3231,7 @@ GameObject:
   - component: {fileID: 646156589}
   - component: {fileID: 646156588}
   m_Layer: 5
-  m_Name: Canvas (2)
+  m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9692,6 +9703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundManager: {fileID: 658191697}
   Background: {fileID: 1420068974}
-  Player: {fileID: 65622505}
-  Dog: {fileID: 846021008}
-  Glass: {fileID: 1289926492}
+  Player: {fileID: 339235880}
+  PlayerImg: {fileID: 65622505}
+  DogImg: {fileID: 846021008}
+  GlassImg: {fileID: 1289926492}

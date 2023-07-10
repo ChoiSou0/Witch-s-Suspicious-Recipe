@@ -10,15 +10,32 @@ public class YarnScript : MonoBehaviour
 
 	public GameObject Background;
 
-	public GameObject Player;
-	public GameObject Dog;
-	public GameObject Glass;
+	public Player Player;
+
+	public GameObject PlayerImg;
+	public GameObject DogImg;
+	public GameObject GlassImg;
 
 	[YarnCommand("PlaySE")]
 	public void PlaySE()
 	{
 		Debug.Log("d");
 		soundManager.PlaySE(Resources.Load<AudioClip>("Clip/MP_Pew Pew"));
+	}
+
+	[YarnCommand("DialogueStart")]
+	public void DialogueStart()
+	{
+		Player.GetComponent<Player>().DontMove = true;
+	}
+
+	[YarnCommand("DialogueEnd")]
+	public void DialogueEnd()
+	{
+		Player.GetComponent<Player>().DontMove = false;
+		PlayerImg.SetActive(false);
+		DogImg.SetActive(false);
+		GlassImg.SetActive(false);
 	}
 
 	[YarnCommand("BGOn")]
@@ -38,15 +55,15 @@ public class YarnScript : MonoBehaviour
 	{
 		if (name == "Player")
 		{
-			Player.SetActive(true);
+			PlayerImg.SetActive(true);
 		}
 		else if (name == "Dog")
 		{
-			Dog.SetActive(true);
+			DogImg.SetActive(true);
 		}
 		else if (name == "Glass")
 		{
-			Glass.SetActive(true);
+			GlassImg.SetActive(true);
 		}
 	}
 
@@ -55,15 +72,15 @@ public class YarnScript : MonoBehaviour
 	{
 		if (name == "Player")
 		{
-			Player.SetActive(false);
+			PlayerImg.SetActive(false);
 		}
 		else if (name == "Dog")
 		{
-			Dog.SetActive(false);
+			DogImg.SetActive(false);
 		}
 		else if (name == "Glass")
 		{
-			Glass.SetActive(false);
+			GlassImg.SetActive(false);
 		}
 	}
 
@@ -72,15 +89,15 @@ public class YarnScript : MonoBehaviour
 	{
 		if (name == "Player")
 		{
-			Player.GetComponent<Image>().color = new Color(255f / 255f, 255f / 255f, 255f / 255f);
+			PlayerImg.GetComponent<Image>().color = new Color(255f / 255f, 255f / 255f, 255f / 255f);
 		}
 		else if (name == "Dog")
 		{
-			Dog.GetComponent<Image>().color = new Color(255f / 255f, 255f / 255f, 255f / 255f);
+			DogImg.GetComponent<Image>().color = new Color(255f / 255f, 255f / 255f, 255f / 255f);
 		}
 		else if (name == "Glass")
 		{
-			Glass.GetComponent<Image>().color = new Color(255f / 255f, 255f / 255f, 255f / 255f);
+			GlassImg.GetComponent<Image>().color = new Color(255f / 255f, 255f / 255f, 255f / 255f);
 		}
 	}
 
@@ -89,15 +106,15 @@ public class YarnScript : MonoBehaviour
 	{
 		if (name == "Player")
 		{
-			Player.GetComponent<Image>().color = new Color(128f / 255f, 128f / 255f, 128f / 255f);
+			PlayerImg.GetComponent<Image>().color = new Color(128f / 255f, 128f / 255f, 128f / 255f);
 		}
 		else if (name == "Dog")
 		{
-			Dog.GetComponent<Image>().color = new Color(128f / 255f, 128f / 255f, 128f / 255f);
+			DogImg.GetComponent<Image>().color = new Color(128f / 255f, 128f / 255f, 128f / 255f);
 		}
 		else if (name == "Glass")
 		{
-			Glass.GetComponent<Image>().color = new Color(128f / 255f, 128f / 255f, 128f / 255f);
+			GlassImg.GetComponent<Image>().color = new Color(128f / 255f, 128f / 255f, 128f / 255f);
 		}
 	}
 
@@ -106,15 +123,15 @@ public class YarnScript : MonoBehaviour
 	{
 		if (name == "Player")
 		{
-			Player.GetComponent<Image>().color = new Color(0f / 255f, 0f / 255f, 0f / 255f);
+			PlayerImg.GetComponent<Image>().color = new Color(0f / 255f, 0f / 255f, 0f / 255f);
 		}
 		else if (name == "Dog")
 		{
-			Dog.GetComponent<Image>().color = new Color(0f / 255f, 0f / 255f, 0f / 255f);
+			DogImg.GetComponent<Image>().color = new Color(0f / 255f, 0f / 255f, 0f / 255f);
 		}
 		else if (name == "Glass")
 		{
-			Glass.GetComponent<Image>().color = new Color(0f / 255f, 0f / 255f, 0f / 255f);
+			GlassImg.GetComponent<Image>().color = new Color(0f / 255f, 0f / 255f, 0f / 255f);
 		}
 	}
 }

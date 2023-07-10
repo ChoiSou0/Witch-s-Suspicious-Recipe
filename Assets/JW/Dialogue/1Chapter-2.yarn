@@ -1,6 +1,7 @@
 ﻿title: 1Chapter-2
 tags:
 ---
+<<DialogueStart YarnScript>>
 <<ChaOn YarnScript Player>>
 <<ChaWhite YarnScript Player>>
 <<BGOn YarnScript>>
@@ -17,7 +18,6 @@ tags:
 <<ChaWhite YarnScript Player>>
 유리아: "누구지?"
 -> 문으로 가서 열기
-	<<ChaOff YarnScript Player>>
-	<<ChaOff YarnScript Glass>>
 	<<BGOff YarnScript>>
+	<<DialogueEnd YarnScript>>
 ===

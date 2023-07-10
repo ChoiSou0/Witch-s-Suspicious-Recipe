@@ -1,6 +1,7 @@
 ﻿title: 1Chapter-3
 tags:
 ---
+<<DialogueStart YarnScript>>
 <<ChaOn YarnScript Player>>
 <<ChaOn YarnScript Glass>>
 <<ChaBlack YarnScript Player>>
@@ -63,7 +64,6 @@ tags:
 <<ChaBlack YarnScript Player>>
 <<ChaWhite YarnScript Dog>>
 엘빈: "고마워. 유리아. 그럼 기대하고 있을게."
-<<ChaOff YarnScript Player>>
-<<ChaOff YarnScript Dog>>
 <<BGOff YarnScript>>
+<<DialogueEnd YarnScript>>
 ===
