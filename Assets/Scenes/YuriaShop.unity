@@ -31038,7 +31038,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4591729837133990159, guid: 9f825344d9e13df4b9000a908e457ad2, type: 3}
       propertyPath: warploc.Array.data[1]
-      value: 5.679148
+      value: 7.88
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f825344d9e13df4b9000a908e457ad2, type: 3}

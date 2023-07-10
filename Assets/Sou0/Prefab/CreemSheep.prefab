@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1955885539542533308}
   - component: {fileID: 1955885539542533307}
   - component: {fileID: 1955885539542533310}
+  - component: {fileID: 3452154294386994873}
   m_Layer: 0
   m_Name: CreemSheepSprite
   m_TagString: Untagged
@@ -154,6 +155,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &3452154294386994873
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955885539542533305}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2
 --- !u!1 &1955885539731450853
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,14 +182,13 @@ GameObject:
   - component: {fileID: 1955885539731450855}
   - component: {fileID: 1955885539731450854}
   - component: {fileID: 708316362562694552}
-  - component: {fileID: 2075412794977055622}
   m_Layer: 0
   m_Name: CreemSheep
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1955885539731450855
 Transform:
   m_ObjectHideFlags: 0
@@ -222,23 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Type>k__BackingField: 2
-  <enable>k__BackingField: 0
+  <enable>k__BackingField: 1
   NearUi: {fileID: 7561340619435644107, guid: 39d1682f8d48fd441aa8791f51723413, type: 3}
   ItemInfo: {fileID: 11400000, guid: fc111d44327eec345aa2ef61d6010176, type: 2}
   Creem: 1
---- !u!58 &2075412794977055622
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1955885539731450853}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 3
