@@ -13,10 +13,7 @@ public class SoundManager : MonoBehaviour
 
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.F))
-		{
-			audioSource.Play();
-		}
+		
 	}
 
 	public void PlaySE(AudioClip audioClip)
