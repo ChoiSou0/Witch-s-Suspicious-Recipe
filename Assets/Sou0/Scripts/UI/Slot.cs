@@ -15,6 +15,7 @@ public class Slot : MonoBehaviour
     public Item ItemInfo;
     public bool SlotAwake = false;
     [SerializeField] private Sprite DontAwakeImage;
+    [SerializeField] private Sprite NullImage;
 
     private void Awake()
     {
@@ -79,7 +80,7 @@ public class Slot : MonoBehaviour
 
             if (Count <= 0)
             {
-                ItemImage.sprite = null;
+                ItemImage.sprite = NullImage;
                 MaxCount = 0;
                 ItemInfo = null; 
             }
