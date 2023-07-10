@@ -39,8 +39,14 @@ public class Player : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (!DontMove)
-            Move();
+		if (DontMove == true)
+		{
+			rb2D.velocity = new Vector3(0, 0, 0);
+		}
+		else
+		{
+			Move();
+		}
 		StartCoroutine(Animation());
 	}
 
@@ -61,7 +67,7 @@ public class Player : MonoBehaviour
 		{
 			case Ani_Type.IDLE:
 				switch (RastVec)
-                {
+				{
 					case 1:
 						spriteRenderer.flipX = false;
 						animator.SetBool("isBehindIdle", true);
@@ -94,7 +100,7 @@ public class Player : MonoBehaviour
 						spriteRenderer.flipX = true;
 						animator.SetBool("isRightDownIdle", true);
 						break;
-                }
+				}
 				break;
 			case Ani_Type.UP:
 				spriteRenderer.flipX = false;
@@ -160,28 +166,28 @@ public class Player : MonoBehaviour
 		float X = MoveX * Speed * 2;
 		float Y = MoveY * Speed * 2;
 
-        if (MoveX == 0 && MoveY == 0)
-            AniType = Ani_Type.IDLE;
-        else if (MoveX == 0 && MoveY > 0)
-            AniType = Ani_Type.UP;
-        else if (MoveX == 0 && MoveY < 0)
-            AniType = Ani_Type.DOWN;
-        else if (MoveX > 0 && MoveY == 0)
-            AniType = Ani_Type.RIGHT;
-        else if (MoveX < 0 && MoveY == 0)
-            AniType = Ani_Type.LEFT;
-        else if (MoveX > 0 && MoveY > 0)
-            AniType = Ani_Type.RIGHTUP;
-        else if (MoveX > 0 && MoveY < 0)
-            AniType = Ani_Type.RIGHTDOWN;
-        else if (MoveX < 0 && MoveY > 0)
-            AniType = Ani_Type.LEFTUP;
-        else if (MoveX < 0 && MoveY < 0)
-            AniType = Ani_Type.LEFTDOWN;
+		if (MoveX == 0 && MoveY == 0)
+			AniType = Ani_Type.IDLE;
+		else if (MoveX == 0 && MoveY > 0)
+			AniType = Ani_Type.UP;
+		else if (MoveX == 0 && MoveY < 0)
+			AniType = Ani_Type.DOWN;
+		else if (MoveX > 0 && MoveY == 0)
+			AniType = Ani_Type.RIGHT;
+		else if (MoveX < 0 && MoveY == 0)
+			AniType = Ani_Type.LEFT;
+		else if (MoveX > 0 && MoveY > 0)
+			AniType = Ani_Type.RIGHTUP;
+		else if (MoveX > 0 && MoveY < 0)
+			AniType = Ani_Type.RIGHTDOWN;
+		else if (MoveX < 0 && MoveY > 0)
+			AniType = Ani_Type.LEFTUP;
+		else if (MoveX < 0 && MoveY < 0)
+			AniType = Ani_Type.LEFTDOWN;
 
-        Vector3 GetVel = new Vector3(X, Y, 0);
+		Vector3 GetVel = new Vector3(X, Y, 0);
 		rb2D.velocity = GetVel;
 
-		
+
 	}
 }

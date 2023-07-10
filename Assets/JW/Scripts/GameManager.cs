@@ -54,10 +54,12 @@ public class GameManager : MonoBehaviour
 
 	IEnumerator LoadDelay(string scenename)
 	{
-		player.SetActive(false);
+		//player.SetActive(false);
+		player.GetComponent<Player>().DontMove = true;
 		SceneManager.LoadScene("LoadScene");
 		yield return new WaitForSeconds(2f);
 		SceneManager.LoadScene(scenename);
-		player.SetActive(true);
+		//player.SetActive(true);
+		player.GetComponent<Player>().DontMove = false;
 	}
 }
