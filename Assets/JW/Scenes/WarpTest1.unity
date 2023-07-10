@@ -3730,8 +3730,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 102900000, guid: 0310e3f4ffa136a44a5f93b36ac2d7b1, type: 3}
   warploc:
+  - -5
   - 0
-  - 5
 --- !u!1 &1313069069
 GameObject:
   m_ObjectHideFlags: 0
